@@ -1,0 +1,24 @@
+{
+  "name": "yulenfernandez-com",
+  "version": "1.0.0",
+  "description": "Hello world!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/yulen.fernandez/yulenfernandez-com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/yulen.fernandez/yulenfernandez-com/issues"
+  },
+  "homepage": "https://gitlab.com/yulen.fernandez/yulenfernandez-com#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.9",
+    "postcss-cli": "^6.1.2"
+  },
+  "dependencies": {}
+}

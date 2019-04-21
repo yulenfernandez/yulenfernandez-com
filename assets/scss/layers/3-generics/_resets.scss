@@ -1,0 +1,41 @@
+/*----------------------------------------------------------------------------*\
+  3-GENERIC / RESETS
+\*----------------------------------------------------------------------------*/
+
+
+$html-size-map: (
+  phone-max: 56%,
+  tablet-portrait-min: 56%,
+  tablet-landscape-min: 62.5%,
+  desktop-min: 62.5%,
+  large-desktop-min: 65%
+);
+
+$line-height-map: (
+  phone-max: 1.4,
+  tablet-portrait-min: 1.4,
+  tablet-landscape-min: 1.5,
+  desktop-min: 1.5,
+  large-desktop-min: 1.6
+);
+
+//To adapt line-height on screen's size
+@include genMedias(":root", "--line-height", $line-height-map);
+
+html {
+  font-size: .625em; //fallback IE8+
+  font-size: calc(1em * .625); //IE9-IE11 math fixing.
+  box-sizing: border-box;
+  line-height: $line-height-fallback; //For IE that doesn't support custom var
+  @supports(--css: variables) { line-height: var(--line-height); }
+  @include genMedias("&", "font-size", $html-size-map);
+}
+
+  body {
+    margin: 0;
+    font-size: 1.6em; //Cascading reset default font-size, so elements without a font-size defined will get the default size
+  }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

@@ -1,0 +1,103 @@
+/*----------------------------------------------------------------------------*\
+  2-TOOLS / MIXINS
+\*----------------------------------------------------------------------------*/
+
+
+//Generate font-size for all breaks points
+@mixin genMedias($tag, $property, $map) {
+
+  $first-loop: true;
+  @each $break-name, $break-value in $break-list {
+
+    @if ($first-loop) {
+      @media (max-width: #{$break-value}) {
+        #{$tag} {
+          #{$property}: map-get($map, $break-name);
+        }
+      }
+    } @else {
+      @media (min-width: #{$break-value}) {
+        #{$tag} {
+          #{$property}: map-get($map, $break-name);
+        }
+      }
+    }
+
+    $first-loop: false;
+  }
+
+}
+
+
+//If needed to use specific media queries
+@mixin for-phone-only {
+  @media (max-width: $phone-max) { @content; }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: $tablet-portrait-min) { @content; }
+}
+@mixin for-tablet-portrait-only {
+  @media (min-width: $tablet-portrait-min) and (max-width: $tablet-landscape-min) { @content; }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: $tablet-landscape-min) { @content; }
+}
+@mixin for-tablet-landscape-only {
+  @media (min-width: $tablet-landscape-min) and (max-width: $desktop-min) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: $desktop-min) { @content; }
+}
+@mixin for-desktop-only {
+  @media (min-width: $desktop-min) and (max-width: $large-desktop-min) { @content; }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: $large-desktop-min) { @content; }
+}
+
+
+//Used to set margin according to vertical rythming
+@function rwd-vertical-rythm($multiple) {
+  @return calc(var(--line-height) * #{$multiple} * 1rem);
+}
+
+
+//Common shared text styles
+@mixin text-style {
+  font-family: 'Work Sans', Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+  line-height: $line-height-fallback; //For IE that doesn't support custom var
+  @supports(--css: variables) { line-height: var(--line-height); }
+  font-weight: 400;
+  color: $text;
+}
+
+
+//We use mixins for text styles as they can be used in other block that need them, eg. c-footer
+@mixin h1-style {
+  @include text-style;
+  font-weight: 600;
+  font-size: $h1-size;
+}
+
+@mixin p-style {
+  @include text-style;
+  font-weight: 300;
+  font-size: $p-size;
+}
+
+@mixin a-style {
+  @include text-style;
+  font-weight: 300;
+  color: $link;
+  text-decoration: none;
+  font-size: $a-size;
+}
+
+@mixin smp-style {
+  @include text-style;
+  font-size: $smp-size;
+}
