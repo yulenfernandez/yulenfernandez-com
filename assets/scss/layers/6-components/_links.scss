@@ -4,33 +4,23 @@
 
 
 .c-link {
-  padding-bottom: .5rem;
+  padding-bottom: 1rem;
   border-bottom: 2px solid rgba($link, .3);
   transition: transform .3s ease-out, color .3s ease-out, border .3s ease-out;
 
-  &--sm { font-size: $smp-size; }
+  &--sm {
+		padding-bottom: .8rem; 
+		font-size: $smp-size;
+	}
 
   &:hover {
     // transform: translateY(-.5px);
     color: $text;
     border-bottom: 2px solid rgba($link, 1);
   }
-  
-  &--designer {
-    border-color: rgba(255, 110, 91, .6);
+}
 
-    &:hover {
-      color: rgba(255, 110, 91, 1);
-      border-color: rgba(255, 110, 91, 1);
-    }
-  }
 
-  &--developper {
-    border-color: rgba(61, 193, 255, .6);
-
-    &:hover {
-      color: rgba(61, 193, 255, 1);
-      border-color: rgba(61, 193, 255, 1);
-    }
-  }
+.c-quit {
+	&__icon { width: 2rem; }
 }

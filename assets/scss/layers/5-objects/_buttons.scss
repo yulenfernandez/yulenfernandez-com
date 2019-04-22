@@ -1,9 +1,9 @@
 /*----------------------------------------------------------------------------*\
-  6-COMPONENTS / FOOTER
+  5-OBJECTS / BUTTONS 
 \*----------------------------------------------------------------------------*/
 
 
-.c-footer {
-	@include smp-style;
-	font-weight: 500;
+.o-btn {
+	display: inline-block;
+	padding: .8rem 2.4rem;
 }

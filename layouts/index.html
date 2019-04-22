@@ -4,58 +4,47 @@
 
   <div class="o-main">
 
-    <div class="o-main__content">
+    <div class="o-main__content  js-page" page="home">
       <h1>Yulen Fernandez</h1>
-      <p>UX designer and HTML/CSS developper passionate about greats designs. Currently working as a UX designer/Front-End developer at ARGO in Montpellier, France.</p>
+      <p>Product designer and HTML/CSS developer passionate about great products. Currently working at ARGO in Montpellier, France.</p>
   
-      <div class="o-main__links">
-        <a class="o-link  c-link" href="https://behance.net/yulenfernandez" target="_blank">Behance Portfolio</a>
-        <a class="o-link  c-link" href="https://dribbble.com/yulenfernandez" target="_blank">Dribbble Shots</a>
-        <a class="o-link  c-link" href="https://github.com/yulenfernandez" target="_blank">GitHub Projects</a>
-        <a class="o-link  c-link" href="https://codepen.io/yulenfernandez/" target="_blank">Code Pens</a>
+      <div class="o-links">
+        <a class="o-links__element  c-link" href="https://behance.net/yulenfernandez" target="_blank">Behance Portfolio</a>
+        <a class="o-links__element  c-link" href="https://dribbble.com/yulenfernandez" target="_blank">Dribbble Shots</a>
+        <a class="o-links__element  c-link" href="https://github.com/yulenfernandez" target="_blank">GitHub Projects</a>
+        <a class="o-links__element  c-link" href="https://codepen.io/yulenfernandez/" target="_blank">Code Pens</a>
       </div>
 			<div id="js-links"></div>
     </div>
+
+		<div id="js-form" class="o-main__content  js-page  u-display-none" page="contact">
+			<div class="o-page-head">
+				<h1>Contact</h1>
+				<a class="o-page-head__quit  c-quit  js-pageLink" targetPage="home" href="#">
+					<img class="c-quit__icon" src="img/icon-quit.svg">
+				</a>
+			</div>
+
+			<form class="c-form" name="contact" method="POST" action="" netlify-honeypot="username" data-netlify="true">
+				<input class="c-form__input" type="text" name="username" placeholder="Your username">
+				<input class="c-form__input" type="email" name="email" placeholder="Your email" required="true">
+				<textarea class="c-form__textarea" name="message" placeholder="Your message" required="true"></textarea>
+				<div class="c-form__submit-w">
+					<input id="js-formSubmitBtn" type="submit" class="o-btn  c-btn" value="Send">
+					<span id="js-formMsg" class="c-form__submit-msg  u-display-none"></span>
+				</div>
+			</form>
+		</div>
   
   </div>
 
 	<div id="js-footer"></div>
   <div class="o-footer">
     <div class="o-footer__content  c-footer">
-      Find me in: <a class="c-link  c-link--sm" href="https://twitter.com/yulenfernandez" target="_blank">Twitter</a> <a class="c-link  c-link--sm" href="https://www.linkedin.com/in/fernandez-julen-6b379b94/" target="_blank">LinkedIn</a>
+      More: <a class="c-link  c-link--sm" href="https://twitter.com/yulenfernandez" target="_blank">Twitter</a> <a class="c-link  c-link--sm" href="https://www.linkedin.com/in/fernandez-julen-6b379b94/" target="_blank">LinkedIn</a> <a class="c-link  c-link--sm  js-pageLink" targetPage="contact" href="#">Contact</a>
     </div>
   </div>
 
 </section>
 
 {{ end }}
-
-{{/*  {{ define "main" }}
-
-<section class="o-site-content">
-
-  <div class="o-main">
-
-    <div class="o-main__content">
-      <h1>Yulen Fernandez</h1>
-      <p>UX <span class="u-designer">designer</span> and HTML/CSS <span class="u-developper">developper</span> passionate about greats designs. Currently working as a UX designer at ARGO in Montpellier, France.</p>
-
-      <div class="o-main__links">
-        <a class="o-link  c-link  c-link--designer" href="https://behance.net/yulenfernandez" target="_blank">Behance Portfolio</a>
-        <a class="o-link  c-link  c-link--designer" href="https://dribbble.com/yulenfernandez" target="_blank">Dribbble Shots</a>
-        <a class="o-link  c-link  c-link--developper" href="https://github.com/yulenfernandez" target="_blank">GitHub Projects</a>
-        <a class="o-link  c-link  c-link--developper" href="https://codepen.io/yulenfernandez/" target="_blank">Code Pens</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="o-footer">
-    <div class="o-footer__content  c-footer">
-      Find me in: <a class="c-link  c-link--sm" href="https://twitter.com/yulenfernandez" target="_blank">Twitter</a> <a class="c-link  c-link--sm" href="https://www.linkedin.com/in/fernandez-julen-6b379b94/" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-
-</section>
-
-{{ end }}  */}}

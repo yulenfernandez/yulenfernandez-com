@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Yulen Fernandez</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
 		 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/main.css") | resources.PostCSS | resources.Minify | resources.Fingerprint}}
     <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
-
-		{{ $script := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
-		<script src="{{ $script.Permalink }}"></script>
   </head>
   <body>
 
@@ -21,5 +18,9 @@
   
     {{ end }}
 
+		<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+
+		{{ $script := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
+		<script src="{{ $script.Permalink }}"></script>
   </body>
 </html>

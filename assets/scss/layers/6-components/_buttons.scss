@@ -1,9 +1,15 @@
 /*----------------------------------------------------------------------------*\
-  6-COMPONENTS / FOOTER
+  6-COMPONENTS / BUTTONS 
 \*----------------------------------------------------------------------------*/
 
 
-.c-footer {
+.c-btn {
 	@include smp-style;
+	background: $text;
+	color: $main;
 	font-weight: 500;
+	border-radius: .4rem;
+	border: 0;
+
+	&--deactivated { background: rgba($text, .5); }
 }

@@ -1,0 +1,38 @@
+/*----------------------------------------------------------------------------*\
+  6-COMPONENTS / FORMS
+\*----------------------------------------------------------------------------*/
+
+
+.c-form {
+	&__input,
+	&__textarea {
+		padding: 1.2rem;
+		background: none;
+		border: 1px solid $text;
+		border-radius: .4rem;
+		@include smp-style;
+		&::placeholder {
+			color: $link;
+			font-weight: 300;
+		}
+	}
+	&__submit-w {
+		display: flex;
+		align-items: center;
+		margin-top: 3.7rem;
+
+		@include for-phone-only {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+	}
+	&__submit-msg {
+		margin-left: 2rem;
+		@include smp-style;
+
+		@include for-phone-only {
+			margin-left: 0;
+			margin-top: 2rem;
+		}
+	}
+}
