@@ -23,6 +23,7 @@ $line-height-map: (
 @include genMedias(":root", "--line-height", $line-height-map);
 
 html {
+	height: 100%;
   font-size: .625em; //fallback IE8+
   font-size: calc(1em * .625); //IE9-IE11 math fixing.
   box-sizing: border-box;
@@ -32,6 +33,7 @@ html {
 }
 
   body {
+		height: 100%;
     margin: 0;
     font-size: 1.6em; //Cascading reset default font-size, so elements without a font-size defined will get the default size
   }

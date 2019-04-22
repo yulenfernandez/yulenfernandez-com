@@ -9,9 +9,11 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
-    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/main.css") | resources.PostCSS}}
-
+		 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/main.css") | resources.PostCSS | resources.Minify | resources.Fingerprint}}
     <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
+
+		{{ $script := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
+		<script src="{{ $script.Permalink }}"></script>
   </head>
   <body>
 
@@ -19,11 +21,5 @@
   
     {{ end }}
 
-    {{/*  <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>  */}}
-
-    {{/*  <script src="js/main.js"></script>  */}}
   </body>
 </html>
