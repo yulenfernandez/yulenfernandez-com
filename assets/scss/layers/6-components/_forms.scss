@@ -8,11 +8,11 @@
 	&__textarea {
 		padding: 1.2rem;
 		background: none;
-		border: 1px solid $text;
+		border: 1px solid $link;
 		border-radius: .4rem;
 		@include smp-style;
 		&::placeholder {
-			color: $link;
+			color: rgba($link, .8);
 			font-weight: 300;
 		}
 	}
