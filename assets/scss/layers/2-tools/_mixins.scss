@@ -87,6 +87,13 @@
   font-size: $h1-size;
 }
 
+@mixin h2-style {
+  @include text-style;
+	@include line-height;
+  font-weight: 500;
+  font-size: $h2-size;
+}
+
 @mixin p-style {
   @include text-style;
 	@include line-height;

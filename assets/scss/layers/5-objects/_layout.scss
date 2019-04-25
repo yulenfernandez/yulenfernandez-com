@@ -10,16 +10,9 @@
   flex-direction: column;
   padding: 2.4rem;
   background: $main;
-	
-	&--fixed {
-		height: unset;
-		
-		& .o-main { margin: 2rem 0 7rem 0; }
-		& .o-footer { margin-bottom: 2rem; }
-	}
 }
   .o-main {
-    height: 91%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,17 +41,3 @@
 			&:last-child { margin-bottom: 0; }
 		}
 	}
-
-  .o-footer {
-    height: 9%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &__content {
-      width: 100%;
-      max-width: 500px;
-
-      & > .c-link { margin-left: 1.3rem; }
-    }
-  }

@@ -9,3 +9,9 @@
 
 .u-display-none { display: none; }
 .u-visibility-hidden { visibility: hidden; }
+
+.u-smp { @include smp-style; }
+
+.u-mb-8 { margin-bottom: .8rem; }
+.u-mb-15 { margin-bottom: 1.5rem; }
+.u-mb-45 { margin-bottom: 4.5rem; }

@@ -3,16 +3,21 @@
 \*----------------------------------------------------------------------------*/
 
 
-h1, p, a { margin: 0; }
+h1, h2, p, a { margin: 0; }
 
 h1 { 
   @include h1-style;
-  margin-bottom: rwd-vertical-rythm(.5);
+  //margin-bottom: rwd-vertical-rythm(.5);
+}
+
+h2 { 
+  @include h2-style;
+  //margin-bottom: rwd-vertical-rythm(1);
 }
 
 p {
   @include p-style;
-  margin-bottom: rwd-vertical-rythm(2.5);
+  //margin-bottom: rwd-vertical-rythm(3);
 }
 
 a { @include a-style; }
