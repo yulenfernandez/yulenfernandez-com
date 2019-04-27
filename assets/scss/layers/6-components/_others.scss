@@ -15,7 +15,7 @@
 	@include small-text-style;
 
 	&__item {
-		&:not(:first-child) { margin-left: 1.2rem; }
+		&:not(:first-child) { margin-left: 1rem; }
 
 		&.is-active {
 			color: rgba($text, .8);
