@@ -15,4 +15,9 @@ p {
   margin-bottom: rwd-vertical-rythm(2.5);
 }
 
-a { @include a-style; }
+a {
+	display: inline-block;
+	@include a-style;
+
+	&:hover { cursor: pointer; }
+}

@@ -10,7 +10,7 @@
 		background: none;
 		border: 1px solid $link;
 		border-radius: .4rem;
-		@include smp-style;
+		@include small-text-style;
 		&::placeholder {
 			color: rgba($link, .8);
 			font-weight: 300;
@@ -28,7 +28,7 @@
 	}
 	&__submit-msg {
 		margin-left: 2rem;
-		@include smp-style;
+		@include small-text-style;
 
 		@include for-phone-only {
 			margin-left: 0;

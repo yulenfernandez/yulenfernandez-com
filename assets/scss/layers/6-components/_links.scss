@@ -7,10 +7,11 @@
   padding-bottom: 1rem;
   border-bottom: 2px solid rgba($link, .3);
   transition: transform .3s ease-out, color .3s ease-out, border .3s ease-out;
+	font-size: $link-size;
 
   &--sm {
 		padding-bottom: .8rem; 
-		font-size: $smp-size;
+		font-size: $small-text-size;
 	}
 
   &:hover {

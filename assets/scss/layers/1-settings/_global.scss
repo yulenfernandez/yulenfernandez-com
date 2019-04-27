@@ -36,15 +36,18 @@ You can check the full code on my GitHub.
 }
 
 
-//Colors
-$main: #0F0862;
-$text: #E1E3F7;
-$link: #A9B0EB;
 
+//Colors
+$main: #050754;
+$text: #EAEAF8;
+$link: #BBBCE5;
+$footer: #04053F;
 
 //$main: #FCFCFC;
 //$text: #424242;
 //$link: #848484;
+
+
 
 //Breaks points
 $phone-max: pxToEm(599);
@@ -63,10 +66,11 @@ $break-list: (
 );
 
 
+
 //Types 
 $line-height-fallback: 1.5; //For IE that doesn't support custom var
 
-$h1-size: 3.8rem;
-$p-size: 2.2rem;
-$a-size: 2rem;
-$smp-size: 1.7rem;
+$h1-size: 3.7rem;
+$text-size: 2.1rem;
+$small-text-size: 1.5rem;
+$link-size: 1.9rem;

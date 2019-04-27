@@ -60,11 +60,11 @@
 }
 
 
+
 //Used to set margin according to vertical rythming
 @function rwd-vertical-rythm($multiple) {
   @return calc(var(--line-height) * #{$multiple} * 1rem);
 }
-
 
 //Common shared text styles
 @mixin text-style {
@@ -78,7 +78,6 @@
   @supports(--css: variables) { line-height: var(--line-height); }
 }
 
-
 //We use mixins for text styles as they can be used in other block that need them, eg. c-footer
 @mixin h1-style {
   @include text-style;
@@ -90,12 +89,13 @@
 @mixin p-style {
   @include text-style;
 	@include line-height;
-  font-size: $p-size;
+  font-size: $text-size;
 }
 
-@mixin smp-style {
+@mixin small-text-style {
   @include text-style;
-  font-size: $smp-size;
+	@include line-height;
+  font-size: $small-text-size;
 }
 
 @mixin a-style {
@@ -103,5 +103,12 @@
 	line-height: 1;
   color: $link;
   text-decoration: none;
-  font-size: $a-size;
+}
+
+
+
+// Others
+@mixin section-padding {
+	@include for-phone-only {	padding: 5rem 2.4rem; }
+	@include for-tablet-portrait-up { padding: 2.4rem; }
 }

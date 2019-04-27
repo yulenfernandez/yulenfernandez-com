@@ -4,7 +4,7 @@
 
 
 .c-btn {
-	@include smp-style;
+	@include small-text-style;
 	background: $text;
 	color: $main;
 	font-weight: 500;
