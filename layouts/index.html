@@ -20,7 +20,16 @@
 				<div class="c-page-head">
 					<h1>Contact</h1>
 					<a class="c-page-head__quit  c-quit  js-pageLink" targetPage="home"> 
-						<img class="c-quit__icon" src="img/icon-quit.svg">
+						<svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+								<g id="Icon-cross">
+										<g transform="matrix(0.865,0,0,0.865,13.3541,13.3541)">
+												<path d="M0,0L200,200" style="fill:none"/>
+										</g>
+										<g transform="matrix(-0.865,0,0,0.865,186.354,13.3541)">
+												<path d="M0,0L200,200" style="fill:none"/>
+										</g>
+								</g>
+						</svg>
 					</a>
 				</div>
 
@@ -29,7 +38,7 @@
 					<input class="c-form__input" type="email" name="email" placeholder="Your email" required="true">
 					<textarea class="c-form__textarea" name="message" placeholder="Your message" required="true"></textarea>
 					<div class="c-form__submit-w">
-						<input id="js-formSubmitBtn" type="submit" class="o-btn  c-btn" value="Send">
+						<input id="js-formSubmitBtn" type="submit" class="c-btn" value="Send">
 						<span id="js-formMsg" class="c-form__submit-msg  u-display-none"></span>
 					</div>
 				</form>
@@ -49,9 +58,9 @@
 					
 					<div class="c-footer__right-section">
 						<span id="js-footerRightSection"></span>
-						<div class="c-footer__link--wide  c-selector">
-							<a class="c-selector__item">Day</a>
-							<a class="c-selector__item  is-active">Night</a>
+						<div class="c-footer__link--wide  c-selector  c-selector--theme-switch">
+							<a class="c-selector__item  js-themeSwitch" themeValue="light">Day</a>
+							<a class="c-selector__item  js-themeSwitch" themeValue="dark">Night</a>
 						</div>
 						<div class="c-footer__link--wide  c-selector">
 							<a class="c-selector__item  is-active">En</a>

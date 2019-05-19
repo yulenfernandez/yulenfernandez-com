@@ -45,6 +45,28 @@ function fnPageHandler() {
 
 
 /**
+ * Manage theme switcher
+ */
+function fnThemeSwitch(sTargetThemeValue) {
+  if (typeof sTargetThemeValue !== 'string') {
+	  sTargetThemeValue = this.getAttribute('themeValue');
+	}
+
+	document.body.setAttribute('data-theme', sTargetThemeValue);			
+
+	var dActiveSwitchLinks = document.querySelectorAll('.js-themeSwitch.is-active');
+	for (var i=0; i != dActiveSwitchLinks.length; i++ ) {
+		dActiveSwitchLinks[i].classList.remove('is-active');
+	}
+
+	var dInactiveSwitchLinks = document.querySelectorAll('.js-themeSwitch[themeValue="' + sTargetThemeValue + '"]');
+	for (var i=0; i != dInactiveSwitchLinks.length; i++ ) {
+		dInactiveSwitchLinks[i].classList.add('is-active');
+	}
+}
+
+
+/**
  * Empty all inputs (except the input with "submit" type) and textareas
  */
 function fnClearForm() {
@@ -98,14 +120,26 @@ $("#js-form").submit(function(e) {
 
 window.addEventListener('DOMContentLoaded', function() {
 
+	var iCurrentHour = (new Date()).getHours();
+
+	if (iCurrentHour <= 7 || iCurrentHour >= 20) {
+		fnThemeSwitch('dark');
+	} else {
+		fnThemeSwitch('light');
+	}
+
 	rwdClassAdd('js-footerLeftSection', 'js-footerRightSection', 'horizontal', 15, 'js-footer', 'c-footer--mobile');
 
-	/**
-	 * Attach to all page links the function to handle the switch
-	 */
 	var dPageLinks = document.querySelectorAll('.js-pageLink');
 	for (var i=0; i != dPageLinks.length; i++ ) {
 		dPageLinks[i].addEventListener('click', fnPageHandler, false);	
 	}
+	
+	var dThemeSwitchs = document.querySelectorAll('.js-themeSwitch');
+	for (var i=0; i != dThemeSwitchs.length; i++ ) {
+		dThemeSwitchs[i].addEventListener('click', fnThemeSwitch, false);	
+	}
+
+	document.body.classList.remove('preload');
 
 }, false);

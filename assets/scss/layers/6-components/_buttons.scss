@@ -4,12 +4,14 @@
 
 
 .c-btn {
+	display: inline-block;
+	padding: .8rem 2.4rem;
 	@include small-text-style;
-	background: $text;
-	color: $main;
-	font-weight: 500;
+	@include customVarFallback(font-weight, types, heavy-text-weight);
+	@include themeColorVar(background, text, 1);
+	@include themeColorVar(color, main, 1);
 	border-radius: .4rem;
 	border: 0;
 
-	&--deactivated { background: rgba($text, .5); }
+	&--deactivated { @include themeColorVar(background, text, .5); }
 }

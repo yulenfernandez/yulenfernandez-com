@@ -14,12 +14,16 @@
 .c-selector {
 	@include small-text-style;
 
+	// Hide the theme's switcher if browser doesn't support CSS custom variables.
+	&--theme-switch {
+		@supports not (--css: variables) { display: none; }
+	}
+
 	&__item {
 		&:not(:first-child) { margin-left: 1rem; }
 
 		&.is-active {
-			color: rgba($text, .8);
-			font-weight: 500;
+			@include customVarFallback(font-weight, types, heavy-text-weight);
 		}
 	}
 }

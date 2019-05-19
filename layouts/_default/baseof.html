@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Yulen Fernandez</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600" rel="stylesheet">
 		<link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
@@ -14,10 +14,10 @@
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
 
-		 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/main.css") | resources.PostCSS | resources.Minify | resources.Fingerprint}}
+		 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/main.css") | resources.PostCSS | resources.Fingerprint }}
     <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
   </head>
-  <body>
+  <body class="preload">
 
     {{ block "main" . }}
   

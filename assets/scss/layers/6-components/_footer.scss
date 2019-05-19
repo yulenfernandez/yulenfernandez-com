@@ -8,9 +8,8 @@
 	width: 100%;
 	@include section-padding;
 	@include small-text-style;
-	font-weight: 500;
-	background: $footer;
-
+	@include themeColorVar(background, footer, 1);
+	
 	&__wrapper { flex-direction: row; }
 
 		&__left-section { display: flex; }

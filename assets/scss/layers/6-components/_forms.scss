@@ -8,12 +8,12 @@
 	&__textarea {
 		padding: 1.2rem;
 		background: none;
-		border: 1px solid $link;
+		border: 1px solid #000000;
+		@include themeColorVar(border-color, link, 1);
 		border-radius: .4rem;
 		@include small-text-style;
 		&::placeholder {
-			color: rgba($link, .8);
-			font-weight: 300;
+			@include themeColorVar(color, link, .7);
 		}
 	}
 	&__submit-w {

@@ -5,8 +5,9 @@
 
 .c-link {
   padding-bottom: 1rem;
-  border-bottom: 2px solid rgba($link, .3);
-  transition: transform .3s ease-out, color .3s ease-out, border .3s ease-out;
+  border-bottom: 2px solid #000000;
+	@include themeColorVar(border-color, link, .3);
+  transition: color .3s ease-out, border .3s ease-out;
 	font-size: $link-size;
 
   &--sm {
@@ -15,13 +16,17 @@
 	}
 
   &:hover {
-    // transform: translateY(-.5px);
-    color: $text;
-    border-bottom: 2px solid rgba($link, 1);
+		@include themeColorVar(color, text, 1);
+		@include themeColorVar(border-color, link, 1);
   }
 }
 
 
 .c-quit {
-	&__icon { width: 2rem; }
+	width: 2rem;
+
+	@include themeColorVar(stroke, text, 1);
+	stroke-width: 2.5rem;
+
+	[data-theme="light"] & { stroke-width: 2.7rem; }
 }

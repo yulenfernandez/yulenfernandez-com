@@ -27,8 +27,7 @@ html {
   font-size: .625em; //fallback IE8+
   font-size: calc(1em * .625); //IE9-IE11 math fixing.
   box-sizing: border-box;
-  line-height: $line-height-fallback; //For IE that doesn't support custom var
-  @supports(--css: variables) { line-height: var(--line-height); }
+	@include customVarFallback(line-height, types, line-height);
   @include genMedias("&", "font-size", $html-size-map);
 }
 

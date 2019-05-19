@@ -24,7 +24,7 @@
 		&__main {
 			flex: 1;
 			@include section-padding;
-			background: $main;
+			@include themeColorVar(background, main, 1);
 		}
 
 }

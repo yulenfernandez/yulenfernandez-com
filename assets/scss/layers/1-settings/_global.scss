@@ -14,12 +14,12 @@
 Normaly I minify my CSS. But if you came here,
 that's surely because you want to see how I have done it,
 
-Enjoy!
+Enjoy your stay.
 
 -
 
 Notes: The code is built regarding ITCSS architecture, BEMIT naming convention and with the help of SCSS.
-You can check the full code on my GitHub.
+You can check the full code here: https://github.com/yulenfernandez/yulenfernandez-com
 
 
 
@@ -35,21 +35,74 @@ You can check the full code on my GitHub.
   @return ($pxValue/16) * 1em;
 }
 
+//From: https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
+// return css color variable with different opacity value
+@function alpha($color, $opacity){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsla($color-h, $color-s, $color-l, $opacity);
+}
+
+// replace substring with another string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+@mixin defineColorHSL($color, $hue, $saturation, $lightness){
+  #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");#{$color}-h: #{$hue};#{$color}-s: #{$saturation};#{$color}-l: #{$lightness};
+}
 
 
-//Colors
-$main: #050754;
-$text: #EAEAF8;
-$link: #BBBCE5;
-$footer: #04053F;
+//For IE that doesn't support custom var
+$fallbackVars: (
+	colors: (
+		main: #050752,
+		text: #E7E8FE,
+		link: #A8ABFA,
+		footer: #030535
+	),
+	types: (
+		line-height: 1.5,
+		h1-weight: 600,
+		text-weight: 300,
+		heavy-text-weight: 500
+	)
+);
 
-//$main: #FCFCFC;
-//$text: #424242;
-//$link: #848484;
+
+
+/**
+ * Colors
+ */
+$base-hue: 240;
+$base-saturation: 90%;
+
+[data-theme="dark"] {
+	@include defineColorHSL(--main, $base-hue, $base-saturation, 17%);
+	@include defineColorHSL(--text, $base-hue, $base-saturation, 95%);
+	@include defineColorHSL(--link, $base-hue, $base-saturation, 82%);
+	@include defineColorHSL(--footer, $base-hue, $base-saturation, 11%);
+}
+
+[data-theme="light"] {
+	@include defineColorHSL(--main, $base-hue, $base-saturation, 99%);
+	@include defineColorHSL(--text, $base-hue, $base-saturation, 26%);
+	@include defineColorHSL(--link, $base-hue, $base-saturation, 36%);
+	@include defineColorHSL(--footer, $base-hue, $base-saturation, 96%);
+}
 
 
 
-//Breaks points
+/**
+ * Break points
+ */
 $phone-max: pxToEm(599);
 $tablet-portrait-min: pxToEm(600);
 $tablet-landscape-min: pxToEm(900);
@@ -67,10 +120,22 @@ $break-list: (
 
 
 
-//Types 
-$line-height-fallback: 1.5; //For IE that doesn't support custom var
-
+/**
+ * Types
+ */
 $h1-size: 3.7rem;
 $text-size: 2.1rem;
 $small-text-size: 1.5rem;
 $link-size: 1.9rem;
+
+:root, [data-theme="dark"] {
+	--h1-weight: 600;
+	--text-weight: 300;
+	--heavy-text-weight: 500;
+}
+
+[data-theme="light"] {
+	--h1-weight: 600;
+	--text-weight: 400;
+	--heavy-text-weight: 600;
+}
