@@ -9,7 +9,10 @@
 		#{$property}: alpha(var(--#{$varName}), $opacity);
 	}
 	
-	transition: #{$property} .5s ease-out;
+	transition-property: background, border-color, color;
+	transition-duration: .5s;
+	transition-timing-function: ease-out;
+
 	body.preload & { transition: none; }
 }
 
