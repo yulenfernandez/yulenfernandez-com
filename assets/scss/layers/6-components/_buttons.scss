@@ -14,4 +14,8 @@
 	border: 0;
 
 	&--deactivated { @include themeColorVar(background, text, .5); }
+
+	&:hover {
+		@include themeColorVar(background, text, .8);
+	}
 }
