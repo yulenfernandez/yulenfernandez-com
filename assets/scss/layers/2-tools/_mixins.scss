@@ -3,15 +3,17 @@
 \*----------------------------------------------------------------------------*/
 
 
-@mixin themeColorVar($property, $varName, $opacity) {
+@mixin themeColorVar($property, $varName, $opacity, $writeTransition) {
 	#{$property}: rgba(map-get(map-get($fallbackVars, "colors"), $varName), $opacity);
 	@supports (--css: variables) {
 		#{$property}: alpha(var(--#{$varName}), $opacity);
 	}
-	
-	transition-property: background, border-color, color;
-	transition-duration: .5s;
-	transition-timing-function: ease-out;
+
+	@if ($writeTransition) {
+		transition-property: background, border-color, color;
+		transition-duration: .5s;
+		transition-timing-function: ease-out;
+	}
 
 	body.preload & { transition: none; }
 }
@@ -94,7 +96,7 @@
 @mixin text-style {
   font-family: 'Work Sans', Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
 	@include customVarFallback(font-weight, types, text-weight);
-	@include themeColorVar(color, text, 1);
+	@include themeColorVar(color, text, 1, true);
 }
 
 @mixin line-height {
@@ -124,7 +126,7 @@
 @mixin a-style {
   @include text-style;
 	line-height: 1;
-	@include themeColorVar(color, link, 1);
+	@include themeColorVar(color, link, 1, false);
   text-decoration: none;
 }
 

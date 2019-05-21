@@ -5,9 +5,8 @@
 
 .c-link {
   padding-bottom: 1rem;
-  border-bottom: 2px solid #000000;
-	@include themeColorVar(border-color, link, .3);
-  transition: color .3s ease-out, border .3s ease-out;
+  border-bottom: .2rem solid #000000;
+	@include themeColorVar(border-color, link, .3, true);
 	font-size: $link-size;
 
   &--sm {
@@ -16,8 +15,8 @@
 	}
 
   &:hover {
-		@include themeColorVar(color, text, 1);
-		@include themeColorVar(border-color, link, 1);
+		@include themeColorVar(color, text, 1, false);
+		@include themeColorVar(border-color, link, 1, false);
   }
 }
 
@@ -25,7 +24,7 @@
 .c-quit {
 	width: 2rem;
 
-	@include themeColorVar(stroke, text, 1);
+	@include themeColorVar(stroke, text, 1, true);
 	stroke-width: 2.5rem;
 
 	[data-theme="light"] & { stroke-width: 2.7rem; }

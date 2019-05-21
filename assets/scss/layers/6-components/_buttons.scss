@@ -8,14 +8,14 @@
 	padding: .8rem 2.4rem;
 	@include small-text-style;
 	@include customVarFallback(font-weight, types, heavy-text-weight);
-	@include themeColorVar(background, text, 1);
-	@include themeColorVar(color, main, 1);
+	@include themeColorVar(background, text, 1, false);
+	@include themeColorVar(color, main, 1, false);
 	border-radius: .4rem;
 	border: 0;
 
-	&--deactivated { @include themeColorVar(background, text, .5); }
+	&--deactivated { @include themeColorVar(background, text, .5, false); }
 
 	&:hover {
-		@include themeColorVar(background, text, .8);
+		@include themeColorVar(background, text, .8, false);
 	}
 }

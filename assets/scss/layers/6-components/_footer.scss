@@ -8,7 +8,7 @@
 	width: 100%;
 	@include section-padding;
 	@include small-text-style;
-	@include themeColorVar(background, footer, 1);
+	@include themeColorVar(background, footer, 1, false);
 	
 	&__wrapper { flex-direction: row; }
 
