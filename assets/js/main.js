@@ -31,9 +31,8 @@ function rwdClassAdd(sElement1, sElement2, sOrientation , iGap, sTargetElement, 
 /**
  * Display the needed page
  */
-function fnPageHandler() {
+function fnPageHandler(sTargetPageName) {
 	var dPages = document.querySelectorAll('.js-page');
-	var sTargetPageName = this.getAttribute('targetPage');
 	var dTargetPage = document.querySelector('.js-page[page="' + sTargetPageName + '"]');
 
 	for (var i=0; i != dPages.length; i++) {
@@ -48,10 +47,6 @@ function fnPageHandler() {
  * Manage theme switcher
  */
 function fnThemeSwitch(sTargetThemeValue) {
-  if (typeof sTargetThemeValue !== 'string') {
-	  sTargetThemeValue = this.getAttribute('themeValue');
-	}
-
 	document.body.setAttribute('data-theme', sTargetThemeValue);			
 
 	var dActiveSwitchLinks = document.querySelectorAll('.js-themeSwitch.is-active');
@@ -134,14 +129,31 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	var dPageLinks = document.querySelectorAll('.js-pageLink');
 	for (var i=0; i != dPageLinks.length; i++ ) {
-		dPageLinks[i].addEventListener('click', fnPageHandler, false);	
+		dPageLinks[i].addEventListener('click', function() {
+			fnPageHandler(this.getAttribute('targetPage'));
+		}, false);	
 	}
 	
 	var dThemeSwitchs = document.querySelectorAll('.js-themeSwitch');
 	for (var i=0; i != dThemeSwitchs.length; i++ ) {
-		dThemeSwitchs[i].addEventListener('click', fnThemeSwitch, false);	
+		dThemeSwitchs[i].addEventListener('click', function() {
+			fnThemeSwitch(this.getAttribute('themeValue'));
+		}, false);	
 	}
 
 	document.body.classList.remove('preload');
 
+	// Come back to home page if Escape key is pressed.
+	// Source: https://medium.com/@uistephen/keyboardevent-key-for-cross-browser-key-press-check-61dbad0a067a
+	document.addEventListener('keyup', function (event) {
+    if (event.defaultPrevented) {
+			return;
+    }
+
+    var key = event.key || event.keyCode;
+
+    if (key === 'Escape' || key === 'Esc' || key === 27) {
+			fnPageHandler('home');
+    }
+	});
 }, false);
