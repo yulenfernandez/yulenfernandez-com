@@ -87,10 +87,12 @@ $("#js-form").submit(function(e) {
 	var $form = $(this);
 	var formData = $form.serialize();
 	var dFormSubmitBtn = $('#js-formSubmitBtn');
-	var dFormMsg = $('#js-formMsg');
+	var dFormSendingMsg = $('#js-formSendingMsg');
+	var dFormSuccessMsg = $('#js-formSuccessMsg');
+	var dFormFailureMsg = $('#js-formFailureMsg');
 
 	dFormSubmitBtn.addClass('c-btn--deactivated');
-	dFormMsg.text('Sending your message...');
+	dFormSendingMsg.removeClass('u-display-none');
 	
 	$.ajax({
 		type: 'POST',
@@ -100,19 +102,19 @@ $("#js-form").submit(function(e) {
 	.done(function(response) {
 		fnClearForm();
 		dFormSubmitBtn.removeClass('c-btn--deactivated');
-		dFormMsg.removeClass('u-display-none');
-		dFormMsg.text('Your message has been sent.');
+		dFormSendingMsg.addClass('u-display-none');
+		dFormSuccessMsg.removeClass('u-display-none');
 		setTimeout(function() {
-			dFormMsg.addClass('u-display-none');
+			dFormSuccessMsg.addClass('u-display-none');
 		}, 5000);
 	})
 	.fail(function(data) {
 		fnClearForm();
 		dFormSubmitBtn.removeClass('c-btn--deactivated');
-		dFormMsg.removeClass('u-display-none');
-		dFormMsg.text('Sorry, your message couldn\'t be sent.');
+		dFormSendingMsg.addClass('u-display-none');
+		dFormFailureMsg.removeClass('u-display-none');
 		setTimeout(function() {
-			dFormMsg.addClass('u-display-none');
+			dFormFailureMsg.addClass('u-display-none');
 		}, 5000);
 	});
 });	

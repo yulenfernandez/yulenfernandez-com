@@ -6,13 +6,13 @@
 
 			<div class="o-wrapper  js-page" page="home">
 				<h1>Yulen Fernandez</h1>
-				<p>Product designer and HTML/CSS developer passionate about great products. Currently working at ARGO in Montpellier, France.</p>
+				<p>{{ i18n "Content" }}</p>
 		
 				<div class="o-links-list">
-					<a class="o-links-list__element  c-link" href="https://behance.net/yulenfernandez" target="_blank">Behance Portfolio</a>
-					<a class="o-links-list__element  c-link" href="https://dribbble.com/yulenfernandez" target="_blank">Dribbble Shots</a>
-					<a class="o-links-list__element  c-link" href="https://github.com/yulenfernandez" target="_blank">GitHub Projects</a>
-					<a class="o-links-list__element  c-link" href="https://codepen.io/yulenfernandez/" target="_blank">Code Pens</a>
+					<a class="o-links-list__element  c-link" href="https://behance.net/yulenfernandez" target="_blank">{{ i18n "Behance Portfolio" }}</a>
+					<a class="o-links-list__element  c-link" href="https://dribbble.com/yulenfernandez" target="_blank">{{ i18n "Dribbble Shots" }}</a>
+					<a class="o-links-list__element  c-link" href="https://github.com/yulenfernandez" target="_blank">{{ i18n "GitHub Projects" }}</a>
+					<a class="o-links-list__element  c-link" href="https://codepen.io/yulenfernandez/" target="_blank">{{ i18n "Code Pens" }}</a>
 				</div>
 			</div>
 
@@ -35,11 +35,13 @@
 
 				<form class="c-form" name="contact" method="POST" action="" netlify-honeypot="username" data-netlify="true">
 					<input class="c-form__input" type="text" name="username" placeholder="Your username">
-					<input class="c-form__input" type="email" name="email" placeholder="Your email" required="true">
-					<textarea class="c-form__textarea" name="message" placeholder="Your message" required="true"></textarea>
+					<input class="c-form__input" type="email" name="email" placeholder='{{ i18n "Your email" }}' required="true">
+					<textarea class="c-form__textarea" name="message" placeholder='{{ i18n "Your message" }}' required="true"></textarea>
 					<div class="c-form__submit-w">
-						<input id="js-formSubmitBtn" type="submit" class="c-btn" value="Send">
-						<span id="js-formMsg" class="c-form__submit-msg  u-display-none"></span>
+						<input id="js-formSubmitBtn" type="submit" class="c-btn" value='{{ i18n "Send" }}'>
+						<span id="js-formSendingMsg" object class="c-form__submit-msg  u-display-none">{{ i18n "Form sending message" }}</span>
+						<span id="js-formSuccessMsg" object class="c-form__submit-msg  u-display-none">{{ i18n "Form success message" }}</span>
+						<span id="js-formFailureMsg" object class="c-form__submit-msg  u-display-none">{{ i18n "Form failure message" }}</span>
 					</div>
 				</form>
 			</div>
@@ -59,12 +61,13 @@
 					<div class="c-footer__right-section">
 						<span id="js-footerRightSection"></span>
 						<div class="c-footer__link--wide  c-selector  c-selector--theme-switch">
-							<a class="c-selector__item  js-themeSwitch" themeValue="light">Day</a>
-							<a class="c-selector__item  js-themeSwitch" themeValue="dark">Night</a>
+							<a class="c-selector__item  js-themeSwitch" themeValue="light">{{ i18n "Day" }}</a>
+							<a class="c-selector__item  js-themeSwitch" themeValue="dark">{{ i18n "Night" }}</a>
 						</div>
 						<div class="c-footer__link--wide  c-selector">
-							<a class="c-selector__item  is-active">En</a>
-							<a class="c-selector__item">Fr</a>
+							{{ range .AllTranslations }}
+								<a class='c-selector__item {{ cond (eq .Language $.Language) "is-active" "" }}' href="/{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+							{{ end }}
 						</div>
 					</div>
 				

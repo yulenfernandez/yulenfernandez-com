@@ -1,0 +1,9 @@
+baseURL: "./"
+title: "Yulen Fernandez"
+DefaultContentLanguage: "en"
+
+languages:
+  en:
+    languageName: En
+  fr:
+    languageName: Fr
