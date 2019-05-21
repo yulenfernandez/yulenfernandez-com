@@ -131,14 +131,14 @@ window.addEventListener('DOMContentLoaded', function() {
 	for (var i=0; i != dPageLinks.length; i++ ) {
 		dPageLinks[i].addEventListener('click', function() {
 			fnPageHandler(this.getAttribute('targetPage'));
-		}, false);	
+		});	
 	}
 	
 	var dThemeSwitchs = document.querySelectorAll('.js-themeSwitch');
 	for (var i=0; i != dThemeSwitchs.length; i++ ) {
 		dThemeSwitchs[i].addEventListener('click', function() {
 			fnThemeSwitch(this.getAttribute('themeValue'));
-		}, false);	
+		});	
 	}
 
 	document.body.classList.remove('preload');
