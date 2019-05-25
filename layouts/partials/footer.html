@@ -1,0 +1,23 @@
+<footer id="js-footer" class="c-footer">
+	<div class="o-wrapper  c-footer__wrapper">
+		
+		<div class="c-footer__left-section">
+			<a class="c-footer__link  c-link  c-link--sm  js-pageLink" targetPage="contact">Contact</a> <a class="c-footer__link  c-link  c-link--sm" href="https://twitter.com/yulenfernandez" target="_blank">Twitter</a> <a class="c-footer__link  c-link  c-link--sm" href="https://www.linkedin.com/in/fernandez-julen-6b379b94/" target="_blank">LinkedIn</a> 
+		</div>
+		<span id="js-footerLeftSection"></span>
+		
+		<div class="c-footer__right-section">
+			<span id="js-footerRightSection"></span>
+			<div class="c-footer__link--wide  c-selector  c-selector--theme-switch">
+				<a class="c-selector__item  js-themeSwitch" themeValue="light">{{ i18n "Day" }}</a>
+				<a class="c-selector__item  js-themeSwitch" themeValue="dark">{{ i18n "Night" }}</a>
+			</div>
+			<div class="c-footer__link--wide  c-selector">
+				{{ range .AllTranslations }}
+					<a class='c-selector__item {{ cond (eq .Language $.Language) "is-active" "" }}' href="/{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+				{{ end }}
+			</div>
+		</div>
+	
+	</div>
+</footer>

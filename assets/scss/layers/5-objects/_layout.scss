@@ -9,23 +9,12 @@
   display: flex;
   flex-direction: column;
 	
-	&--fixed {
-		height: unset;
-		
-		& .o-fullscreen__main { margin: 2rem 0 7rem 0; }
-		& .o-fullscreen__secondary { margin-bottom: 2rem; }
+	&__main {
+		display: flex;
+		flex: 1;
+		@include section-padding;
+		@include themeColorVar(background, main, 1, true);
 	}
-
-		&__main,
-		&__secondary {
-			display: flex;
-		}
-
-		&__main {
-			flex: 1;
-			@include section-padding;
-			@include themeColorVar(background, main, 1, true);
-		}
 
 }
 

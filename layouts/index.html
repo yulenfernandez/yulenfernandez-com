@@ -3,78 +3,15 @@
 	<section class="o-fullscreen">
 
 		<div id="js-siteContent" class="o-fullscreen__main">
+			
+			{{ partial "pages/home" . }}
 
-			<div class="o-wrapper  js-page" page="home">
-				<h1>Yulen Fernandez</h1>
-				<p>{{ i18n "Content" }}</p>
-		
-				<div class="o-links-list">
-					<a class="o-links-list__element  c-link" href="https://behance.net/yulenfernandez" target="_blank">{{ i18n "Behance Portfolio" }}</a>
-					<a class="o-links-list__element  c-link" href="https://dribbble.com/yulenfernandez" target="_blank">{{ i18n "Dribbble Shots" }}</a>
-					<a class="o-links-list__element  c-link" href="https://github.com/yulenfernandez" target="_blank">{{ i18n "GitHub Projects" }}</a>
-					<a class="o-links-list__element  c-link" href="https://codepen.io/yulenfernandez/" target="_blank">{{ i18n "Code Pens" }}</a>
-				</div>
-			</div>
-
-			<div id="js-form" class="o-wrapper  js-page  u-display-none" page="contact">
-				<div class="c-page-head">
-					<h1>Contact</h1>
-					<a class="c-page-head__quit  c-quit  js-pageLink" targetPage="home"> 
-						<svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-								<g id="Icon-cross">
-										<g transform="matrix(0.865,0,0,0.865,13.3541,13.3541)">
-												<path d="M0,0L200,200" style="fill:none"/>
-										</g>
-										<g transform="matrix(-0.865,0,0,0.865,186.354,13.3541)">
-												<path d="M0,0L200,200" style="fill:none"/>
-										</g>
-								</g>
-						</svg>
-					</a>
-				</div>
-
-				<form class="c-form" name="contact" method="POST" action="" netlify-honeypot="username" data-netlify="true">
-					<input class="c-form__input" type="text" name="username" placeholder="Your username">
-					<input class="c-form__input" type="email" name="email" placeholder='{{ i18n "Your email" }}' required="true">
-					<textarea class="c-form__textarea" name="message" placeholder='{{ i18n "Your message" }}' required="true"></textarea>
-					<div class="c-form__submit-w">
-						<input id="js-formSubmitBtn" type="submit" class="c-btn  is-active" value='{{ i18n "Send" }}'>
-						<span id="js-formSendingMsg" object class="c-form__submit-msg  u-display-none">{{ i18n "Form sending message" }}</span>
-						<span id="js-formSuccessMsg" object class="c-form__submit-msg  u-display-none">{{ i18n "Form success message" }}</span>
-						<span id="js-formFailureMsg" object class="c-form__submit-msg  u-display-none">{{ i18n "Form failure message" }}</span>
-					</div>
-				</form>
-			</div>
-		
-		</div>
-
-		<div class="o-fullscreen__secondary">
-
-			<footer id="js-footer" class="c-footer">
-				<div class="o-wrapper  c-footer__wrapper">
-					
-					<div class="c-footer__left-section">
-						<a class="c-footer__link  c-link  c-link--sm  js-pageLink" targetPage="contact">Contact</a> <a class="c-footer__link  c-link  c-link--sm" href="https://twitter.com/yulenfernandez" target="_blank">Twitter</a> <a class="c-footer__link  c-link  c-link--sm" href="https://www.linkedin.com/in/fernandez-julen-6b379b94/" target="_blank">LinkedIn</a> 
-					</div>
-					<span id="js-footerLeftSection"></span>
-					
-					<div class="c-footer__right-section">
-						<span id="js-footerRightSection"></span>
-						<div class="c-footer__link--wide  c-selector  c-selector--theme-switch">
-							<a class="c-selector__item  js-themeSwitch" themeValue="light">{{ i18n "Day" }}</a>
-							<a class="c-selector__item  js-themeSwitch" themeValue="dark">{{ i18n "Night" }}</a>
-						</div>
-						<div class="c-footer__link--wide  c-selector">
-							{{ range .AllTranslations }}
-								<a class='c-selector__item {{ cond (eq .Language $.Language) "is-active" "" }}' href="/{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-							{{ end }}
-						</div>
-					</div>
-				
-				</div>
-			</footer>
+			{{ partial "pages/contact" . }}
 
 		</div>
+
+		{{ partial "footer" . }}
 
 	</section>
+
 {{ end }}
