@@ -14,10 +14,12 @@
 		font-size: $small-text-size;
 	}
 
-  &:hover {
+	&:hover,
+	&.is-active {
 		@include themeColorVar(color, text, 1, false);
 		@include themeColorVar(border-color, link, 1, false);
-  }
+	}
+
 }
 
 
