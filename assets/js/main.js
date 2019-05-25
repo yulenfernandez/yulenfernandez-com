@@ -86,7 +86,7 @@ $("#js-form").submit(function(e) {
 	var dFormSuccessMsg = $('#js-formSuccessMsg');
 	var dFormFailureMsg = $('#js-formFailureMsg');
 
-	dFormSubmitBtn.addClass('c-btn--deactivated');
+	dFormSubmitBtn.removeClass('is-active');
 	dFormSendingMsg.removeClass('u-display-none');
 	
 	$.ajax({
@@ -96,7 +96,7 @@ $("#js-form").submit(function(e) {
 	})
 	.done(function(response) {
 		fnClearForm();
-		dFormSubmitBtn.removeClass('c-btn--deactivated');
+		dFormSubmitBtn.addClass('is-active');
 		dFormSendingMsg.addClass('u-display-none');
 		dFormSuccessMsg.removeClass('u-display-none');
 		setTimeout(function() {
@@ -105,7 +105,7 @@ $("#js-form").submit(function(e) {
 	})
 	.fail(function(data) {
 		fnClearForm();
-		dFormSubmitBtn.removeClass('c-btn--deactivated');
+		dFormSubmitBtn.addClass('is-active');
 		dFormSendingMsg.addClass('u-display-none');
 		dFormFailureMsg.removeClass('u-display-none');
 		setTimeout(function() {
