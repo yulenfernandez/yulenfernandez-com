@@ -1,4 +1,4 @@
-<div id="js-form" class="o-wrapper  js-page  u-display-none" page="contact">
+<div class="o-wrapper  js-page  u-display-none" page="contact">
 	<div class="c-page-head">
 		<h1>Contact</h1>
 		<a class="c-page-head__quit  c-quit  js-pageLink" targetPage="home"> 
@@ -15,7 +15,7 @@
 		</a>
 	</div>
 
-	<form class="c-form" name="contact" method="POST" netlify-honeypot="username" data-netlify="true">
+	<form id="js-form" class="c-form" name="contact" method="POST" netlify-honeypot="username" data-netlify="true">
 		<input class="c-form__input" type="text" name="username" placeholder="Your username">
 		<input class="c-form__input" type="email" name="email" placeholder='{{ i18n "Your email" }}' required="true">
 		<textarea class="c-form__textarea" name="message" placeholder='{{ i18n "Your message" }}' required="true"></textarea>
