@@ -126,41 +126,52 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	var iCurrentHour = (new Date()).getHours();
 
+	var sUrl=location.href;
+	var sUrlFileName = sUrl.substring(sUrl.lastIndexOf('/'));
+
+
+	// Automatically set color theme related to user's time
 	if (iCurrentHour <= 7 || iCurrentHour >= 20) {
 		fnThemeSwitch('dark');
 	} else {
 		fnThemeSwitch('light');
 	}
 
-	rwdClassAdd('js-footerLeftSection', 'js-footerRightSection', 'horizontal', 15, 'js-footer', 'c-footer--mobile');
 
-	var dPageLinks = document.querySelectorAll('.js-pageLink');
-	for (var i=0; i != dPageLinks.length; i++ ) {
-		dPageLinks[i].addEventListener('click', function() {
-			fnPageHandler(this.getAttribute('targetPage'));
-		});	
-	}
-	
-	var dThemeSwitchs = document.querySelectorAll('.js-themeSwitch');
-	for (var i=0; i != dThemeSwitchs.length; i++ ) {
-		dThemeSwitchs[i].addEventListener('click', function() {
-			fnThemeSwitch(this.getAttribute('themeValue'));
-		});	
+	// Only if we are on home page
+	if (sUrlFileName == '/') {
+
+		rwdClassAdd('js-footerLeftSection', 'js-footerRightSection', 'horizontal', 15, 'js-footer', 'c-footer--mobile');
+		
+		var dPageLinks = document.querySelectorAll('.js-pageLink');
+		for (var i=0; i != dPageLinks.length; i++ ) {
+			dPageLinks[i].addEventListener('click', function() {
+				fnPageHandler(this.getAttribute('targetPage'));
+			});	
+		}
+		
+		var dThemeSwitchs = document.querySelectorAll('.js-themeSwitch');
+		for (var i=0; i != dThemeSwitchs.length; i++ ) {
+			dThemeSwitchs[i].addEventListener('click', function() {
+				fnThemeSwitch(this.getAttribute('themeValue'));
+			});	
+		}
+
+		// Come back to home page if Escape key is pressed.
+		// Source: https://medium.com/@uistephen/keyboardevent-key-for-cross-browser-key-press-check-61dbad0a067a
+		document.addEventListener('keyup', function (event) {
+			if (event.defaultPrevented) {
+				return;
+			}
+
+			var key = event.key || event.keyCode;
+
+			if (key === 'Escape' || key === 'Esc' || key === 27) {
+				fnPageHandler('home');
+			}
+		});
 	}
 
 	document.body.classList.remove('preload');
 
-	// Come back to home page if Escape key is pressed.
-	// Source: https://medium.com/@uistephen/keyboardevent-key-for-cross-browser-key-press-check-61dbad0a067a
-	document.addEventListener('keyup', function (event) {
-    if (event.defaultPrevented) {
-			return;
-    }
-
-    var key = event.key || event.keyCode;
-
-    if (key === 'Escape' || key === 'Esc' || key === 27) {
-			fnPageHandler('home');
-    }
-	});
 }, false);
