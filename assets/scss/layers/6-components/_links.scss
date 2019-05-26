@@ -4,13 +4,13 @@
 
 
 .c-link {
-  padding-bottom: 1rem;
+  padding-bottom: .8rem;
   border-bottom: .2rem solid #000000;
 	@include themeColorVar(border-color, link, .3, true);
 	font-size: $link-size;
 
   &--sm {
-		padding-bottom: .6rem; 
+		padding-bottom: .4rem; 
 		font-size: $small-text-size;
 	}
 
