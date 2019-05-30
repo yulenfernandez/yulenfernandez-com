@@ -33,19 +33,12 @@ function rwdClassAdd(sElement1, sElement2, sOrientation , iGap, sTargetElement, 
  */
 function fnPageHandler(sTargetPageName) {
 	var dPages = document.querySelectorAll('.js-page');
-	var dPageLinks = document.querySelectorAll('.js-pageLink');
-	var dTargetPageLink = document.querySelector('.js-pageLink[targetPage="' + sTargetPageName + '"]');
 	var dTargetPage = document.querySelector('.js-page[page="' + sTargetPageName + '"]');
 
 	for (var i=0; i != dPages.length; i++) {
 		dPages[i].classList.add('u-display-none');
 	}
 
-	for (var i=0; i != dPageLinks.length; i++) {
-		dPageLinks[i].classList.remove('is-active');
-	}
-
-	dTargetPageLink.classList.add('is-active');
 	dTargetPage.classList.remove('u-display-none');
 }
 
