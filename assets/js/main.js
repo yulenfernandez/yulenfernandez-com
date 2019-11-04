@@ -4,9 +4,9 @@
  * Check if content overlap and so add class to modify display  
  */
 function rwdClassAdd(sElement1, sElement2, sOrientation , iGap, sTargetElement, sClassToAdd) {
-	var dElement1 = document.getElementById(sElement1);
-	var dElement2 = document.getElementById(sElement2);
-	var dTargetElement = document.getElementById(sTargetElement);
+	let dElement1 = document.getElementById(sElement1);
+	let dElement2 = document.getElementById(sElement2);
+	let dTargetElement = document.getElementById(sTargetElement);
 
 	switch (sOrientation) {
 		case 'horizontal':
@@ -32,10 +32,10 @@ function rwdClassAdd(sElement1, sElement2, sOrientation , iGap, sTargetElement, 
  * Display the needed page
  */
 function fnPageHandler(sTargetPageName) {
-	var dPages = document.querySelectorAll('.js-page');
-	var dTargetPage = document.querySelector('.js-page[page="' + sTargetPageName + '"]');
+	let dPages = document.querySelectorAll('.js-page');
+	let dTargetPage = document.querySelector('.js-page[page="' + sTargetPageName + '"]');
 
-	for (var i=0; i != dPages.length; i++) {
+	for (let i=0; i != dPages.length; i++) {
 		dPages[i].classList.add('u-display-none');
 	}
 
@@ -43,31 +43,34 @@ function fnPageHandler(sTargetPageName) {
 }
 
 
+
 /**
  * Manage theme switcher
  */
 function fnThemeSwitch(sTargetThemeValue) {
-	document.body.setAttribute('data-theme', sTargetThemeValue);			
 
-	var dActiveSwitchLinks = document.querySelectorAll('.js-themeSwitch.is-active');
-	for (var i=0; i != dActiveSwitchLinks.length; i++ ) {
+	document.documentElement.setAttribute('data-theme', sTargetThemeValue);
+
+	let dActiveSwitchLinks = document.querySelectorAll('.js-themeSwitch.is-active');
+	for (let i=0; i != dActiveSwitchLinks.length; i++ ) {
 		dActiveSwitchLinks[i].classList.remove('is-active');
 	}
 
-	var dInactiveSwitchLinks = document.querySelectorAll('.js-themeSwitch[themeValue="' + sTargetThemeValue + '"]');
-	for (var i=0; i != dInactiveSwitchLinks.length; i++ ) {
-		dInactiveSwitchLinks[i].classList.add('is-active');
+	let dTargetSwitchLinks = document.querySelectorAll('.js-themeSwitch[themeValue="' + sTargetThemeValue + '"]');
+	for (let i=0; i != dTargetSwitchLinks.length; i++ ) {
+		dTargetSwitchLinks[i].classList.add('is-active');
 	}
 }
+
 
 
 /**
  * Empty all inputs (except the input with "submit" type) and textareas
  */
 function fnClearForm() {
-	var dFields = document.querySelectorAll('input:not([type="submit"]), textarea');
+	let dFields = document.querySelectorAll('input:not([type="submit"]), textarea');
 
-	for(var i=0; i!= dFields.length; i++) {
+	for(let i=0; i!= dFields.length; i++) {
 		dFields[i].value='';
 	}
 }
@@ -79,12 +82,12 @@ function fnClearForm() {
 $("#js-form").submit(function(e) {
 	e.preventDefault();
 
-	var $form = $(this);
-	var formData = $form.serialize();
-	var dFormSubmitBtn = $('#js-formSubmitBtn');
-	var dFormSendingMsg = $('#js-formSendingMsg');
-	var dFormSuccessMsg = $('#js-formSuccessMsg');
-	var dFormFailureMsg = $('#js-formFailureMsg');
+	let $form = $(this);
+	let formData = $form.serialize();
+	let dFormSubmitBtn = $('#js-formSubmitBtn');
+	let dFormSendingMsg = $('#js-formSendingMsg');
+	let dFormSuccessMsg = $('#js-formSuccessMsg');
+	let dFormFailureMsg = $('#js-formFailureMsg');
 
 	dFormSubmitBtn.removeClass('is-active');
 	dFormSendingMsg.removeClass('u-display-none');
@@ -117,34 +120,34 @@ $("#js-form").submit(function(e) {
 
 window.addEventListener('DOMContentLoaded', function() {
 
-	var iCurrentHour = (new Date()).getHours();
+	let dDarkThemeSwitches = document.querySelectorAll('.js-themeSwitch[themeValue="dark"]');
+	let dLightThemeSwitches = document.querySelectorAll('.js-themeSwitch[themeValue="light"]');
 
-	var sUrl=location.href;
-	var sUrlFileName = sUrl.substring(sUrl.lastIndexOf('/'));
-
-
-	// Automatically set color theme related to user's time
-	if (iCurrentHour <= 7 || iCurrentHour >= 20) {
-		fnThemeSwitch('dark');
+	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+		for (let i = 0; i != dDarkThemeSwitches.length; i++) {
+			dDarkThemeSwitches[i].classList.add('is-active');
+		}
 	} else {
-		fnThemeSwitch('light');
+		for (let i = 0; i != dLightThemeSwitches.length; i++) {
+			dLightThemeSwitches[i].classList.add('is-active');
+		}
 	}
 
-
+	
 	// Only if we are on home page
-	if (sUrlFileName == '/') {
+	if (location.pathname == '/') {
 
 		rwdClassAdd('js-footerLeftSection', 'js-footerRightSection', 'horizontal', 15, 'js-footer', 'c-footer--mobile');
 		
-		var dPageLinks = document.querySelectorAll('.js-pageLink');
-		for (var i=0; i != dPageLinks.length; i++ ) {
+		let dPageLinks = document.querySelectorAll('.js-pageLink');
+		for (let i=0; i != dPageLinks.length; i++ ) {
 			dPageLinks[i].addEventListener('click', function() {
 				fnPageHandler(this.getAttribute('targetPage'));
 			});	
 		}
 		
-		var dThemeSwitchs = document.querySelectorAll('.js-themeSwitch');
-		for (var i=0; i != dThemeSwitchs.length; i++ ) {
+		let dThemeSwitchs = document.querySelectorAll('.js-themeSwitch');
+		for (let i=0; i != dThemeSwitchs.length; i++ ) {
 			dThemeSwitchs[i].addEventListener('click', function() {
 				fnThemeSwitch(this.getAttribute('themeValue'));
 			});	
@@ -157,7 +160,7 @@ window.addEventListener('DOMContentLoaded', function() {
 				return;
 			}
 
-			var key = event.key || event.keyCode;
+			let key = event.key || event.keyCode;
 
 			if (key === 'Escape' || key === 'Esc' || key === 27) {
 				fnPageHandler('home');
