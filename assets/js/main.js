@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Check if content overlap and so add class to modify display  
@@ -79,7 +79,7 @@ function fnClearForm() {
 /**
  * Manage form submit
  */
-$("#js-form").submit(function(e) {
+$('#js-form').submit(function(e) {
 	e.preventDefault();
 
 	let $form = $(this);
@@ -123,7 +123,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	let dDarkThemeSwitches = document.querySelectorAll('.js-themeSwitch[themeValue="dark"]');
 	let dLightThemeSwitches = document.querySelectorAll('.js-themeSwitch[themeValue="light"]');
 
-	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 		for (let i = 0; i != dDarkThemeSwitches.length; i++) {
 			dDarkThemeSwitches[i].classList.add('is-active');
 		}
@@ -133,7 +133,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 
-	
+
 	// Only if we are on home page
 	if (location.pathname == '/') {
 
