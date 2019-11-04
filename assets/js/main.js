@@ -120,6 +120,7 @@ $('#js-form').submit(function(e) {
 
 window.addEventListener('DOMContentLoaded', function() {
 
+	// Set active element on theme switcher depending on user's preferences
 	let dDarkThemeSwitches = document.querySelectorAll('.js-themeSwitch[themeValue="dark"]');
 	let dLightThemeSwitches = document.querySelectorAll('.js-themeSwitch[themeValue="light"]');
 
