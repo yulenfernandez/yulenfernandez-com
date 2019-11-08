@@ -1,9 +1,9 @@
 /*----------------------------------------------------------------------------*\
-  5-OBJECTS / LAYOUT
+  5-STRUCTURES / LAYOUT
 \*----------------------------------------------------------------------------*/
 
 
-.o-fullscreen {
+.s-fullscreen {
   width: 100%;
   height: 100%;
   display: flex;
@@ -19,7 +19,7 @@
 }
 
 
-.o-wrapper {
+.s-wrapper {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -30,7 +30,7 @@
 }
 
 
-.o-links-list {
+.s-links-list {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
