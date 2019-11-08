@@ -7,12 +7,12 @@ h1, p, a { margin: 0; }
 
 h1 { 
   @include h1-style;
-  margin-bottom: rwd-vertical-rythm(.5);
+  margin-bottom: $token-spacing-2xs;
 }
 
 p {
   @include p-style;
-  margin-bottom: rwd-vertical-rythm(2.5);
+  margin-bottom: $token-spacing-xl;
 }
 
 a {
