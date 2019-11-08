@@ -28,6 +28,7 @@ function rwdClassAdd(sElement1, sElement2, sOrientation , iGap, sTargetElement, 
 }
 
 
+
 /**
  * Display the needed page
  */
@@ -74,6 +75,7 @@ function fnClearForm() {
 		dFields[i].value='';
 	}
 }
+
 
 
 /**
@@ -153,6 +155,7 @@ window.addEventListener('DOMContentLoaded', function() {
 				fnThemeSwitch(this.getAttribute('themeValue'));
 			});	
 		}
+
 
 		// Come back to home page if Escape key is pressed.
 		// Source: https://medium.com/@uistephen/keyboardevent-key-for-cross-browser-key-press-check-61dbad0a067a
