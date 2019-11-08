@@ -3,34 +3,21 @@
 \*----------------------------------------------------------------------------*/
 
 
-@mixin themeColorVar($property, $varName, $opacity, $writeTransition) {
-	#{$property}: rgba(map-get(map-get($fallbackVars, "colors"), $varName), $opacity);
-	@supports (--css: variables) {
-		#{$property}: alpha(var(--#{$varName}), $opacity);
-	}
+@mixin themeColorVar($property, $varName, $writeTransition) {
+  #{$property}: map-get($token-color-fallbacks, $varName);
+  #{$property}: var(--#{$varName});
 
-	@if ($writeTransition) {
-		transition-property: background, border-color, color;
-		transition-duration: .5s;
-		transition-timing-function: ease-out;
-	}
-
-	body.preload & { transition: none; }
+  @if ($writeTransition) {
+    transition: background-color $token-animation-normal, color $token-animation-normal, border-color $token-animation-normal;
+    body.preload & { transition: none; }
+  }
 }
-
-@mixin customVarFallback($property, $key, $varName) {
-	#{$property}: map-get(map-get($fallbackVars, $key), $varName);
-	@supports (--css: variables) {
-		#{$property}: var(--#{$varName});
-	}
-}
-
 
 //Generate font-size for all breaks points
 @mixin genMedias($tag, $property, $map) {
 
   $first-loop: true;
-  @each $break-name, $break-value in $break-list {
+  @each $break-name, $break-value in $token-screen-map {
 
     @if ($first-loop) {
       @media (max-width: #{$break-value}) {
@@ -54,79 +41,74 @@
 
 //If needed to use specific media queries
 @mixin for-phone-only {
-  @media (max-width: $phone-max) { @content; }
+  @media (max-width: $token-screen-phone-max) { @content; }
 }
 
 @mixin for-tablet-portrait-up {
-  @media (min-width: $tablet-portrait-min) { @content; }
+  @media (min-width: $token-screen-tablet-portrait-min) { @content; }
 }
 @mixin for-tablet-portrait-only {
-  @media (min-width: $tablet-portrait-min) and (max-width: $tablet-landscape-min) { @content; }
+  @media (min-width: $token-screen-tablet-portrait-min) and (max-width: $token-screen-tablet-landscape-min) { @content; }
 }
 
 @mixin for-tablet-landscape-up {
-  @media (min-width: $tablet-landscape-min) { @content; }
+  @media (min-width: $token-screen-tablet-landscape-min) { @content; }
 }
 @mixin for-tablet-landscape-only {
-  @media (min-width: $tablet-landscape-min) and (max-width: $desktop-min) { @content; }
+  @media (min-width: $token-screen-tablet-landscape-min) and (max-width: $token-screen-desktop-min) { @content; }
 }
 
 @mixin for-desktop-up {
-  @media (min-width: $desktop-min) { @content; }
+  @media (min-width: $token-screen-desktop-min) { @content; }
 }
 @mixin for-desktop-only {
-  @media (min-width: $desktop-min) and (max-width: $large-desktop-min) { @content; }
+  @media (min-width: $token-screen-desktop-min) and (max-width: $token-screen-large-desktop-min) { @content; }
 }
 
 @mixin for-big-desktop-up {
-  @media (min-width: $large-desktop-min) { @content; }
+  @media (min-width: $token-screen-large-desktop-min) { @content; }
 }
-
-
-//Used to set margin according to vertical rythming
-@function rwd-vertical-rythm($multiple) {
-  @return calc(var(--line-height) * #{$multiple} * 1rem);
-}
-
 
 
 /**
  * Common shared text styles
  */
+
+ //To adapt line-height on screen's size
+@include genMedias(":root", "--token-font-line-height", $token-font-line-height-map);
+
+
 @mixin text-style {
   font-family: 'Work Sans', Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
-	@include customVarFallback(font-weight, types, text-weight);
-	@include themeColorVar(color, text, 1, true);
-}
-
-@mixin line-height {
-	@include customVarFallback(line-height, types, line-height);
+  font-weight: $token-font-weight-normal;
+  font-weight: var(--token-font-weight-normal);
+  line-height: $token-font-line-height;
+  line-height: var(--token-font-line-height);
+  @include themeColorVar("color", "token-color-text", true);
 }
 
 //We use mixins for text styles as they can be used in other block that need them, eg. c-footer
 @mixin h1-style {
   @include text-style;
-	@include line-height;
-	@include customVarFallback(font-weight, types, h1-weight);
-  font-size: $h1-size;
+  font-weight: $token-font-weight-bold;
+  font-weight: var(--token-font-weight-bold);
+  font-size: $token-font-size-h1;
 }
 
 @mixin p-style {
   @include text-style;
-	@include line-height;
-  font-size: $text-size;
+  font-size: $token-font-size-body;
 }
 
 @mixin small-text-style {
   @include text-style;
-	@include line-height;
-  font-size: $small-text-size;
+  font-size: $token-font-size-xs;
 }
 
 @mixin a-style {
   @include text-style;
 	line-height: 1;
-	@include themeColorVar(color, link, 1, false);
+	@include themeColorVar("color", "token-color-link", false);
   text-decoration: none;
 }
 

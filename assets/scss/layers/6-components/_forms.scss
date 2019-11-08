@@ -8,15 +8,15 @@
 	&__textarea {
 		padding: 1.2rem;
 		background: none;
-		border: .1rem solid #000000;
+		border: .15rem solid #000000;
 		@include small-text-style;
-		@include themeColorVar(border-color, link, 1, false);
+		@include themeColorVar("border-color", "token-color-link", false);
 		border-radius: .4rem;
 		&::placeholder {
-			@include themeColorVar(color, link, .7, true);
+			@include themeColorVar("color", "token-color-link", true);
 		}
 
-		[data-theme="light"] & { border-width: .15rem; }
+		[data-theme="dark"] & { border-width: .1rem; }
 
 	}
 	&__submit-w {

@@ -8,7 +8,7 @@
 	width: 100%;
 	@include section-padding;
 	@include small-text-style;
-	@include themeColorVar(background, footer, 1, false);
+	@include themeColorVar("background", "token-color-footer", true);
 	
 	&__wrapper { flex-direction: row; }
 

@@ -34,47 +34,35 @@ You can check the full code here: https://github.com/yulenfernandez/yulenfernand
   @return ($pxValue/16) * 1em;
 }
 
-//From: https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
-// return css color variable with different opacity value
-@function alpha($color, $opacity){
-  $color: str-replace($color, 'var(');
-  $color: str-replace($color, ')');
-  $color-h: var(#{$color+'-h'});
-  $color-s: var(#{$color+'-s'});
-  $color-l: var(#{$color+'-l'});
-  @return hsla($color-h, $color-s, $color-l, $opacity);
-}
 
-// replace substring with another string
-@function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-  }
-  @return $string;
-}
-
-@mixin defineColorHSL($color, $hue, $saturation, $lightness){
-  #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");#{$color}-h: #{$hue};#{$color}-s: #{$saturation};#{$color}-l: #{$lightness};
-}
+$token-spacing-base: .4rem;
+$token-spacing-3xs: $token-spacing-base * 1; //4px (+ 4px)
+$token-spacing-2xs: $token-spacing-base * 2; //8px (+ 4px)
+$token-spacing-xs: $token-spacing-base * 3; //12px (+ 4px)
+$token-spacing-sm: $token-spacing-base * 4; //16px (+ 8px)
+$token-spacing-md: $token-spacing-base * 6; //24px (+ 8px)
+$token-spacing-lg: $token-spacing-base * 8; //32px (+ 8px)
+$token-spacing-xl: $token-spacing-base * 12; //48px (+ 16px)
+$token-spacing-2xl: $token-spacing-base * 16; //64px (+ 16px)
+$token-spacing-3xl: $token-spacing-base * 24; //96px (+ 32px
 
 
-//For IE that doesn't support custom var
-$fallbackVars: (
-	colors: (
-		main: #050752,
-		text: #E7E8FE,
-		link: #A8ABFA,
-		footer: #030535
-	),
-	types: (
-		line-height: 1.5,
-		h1-weight: 600,
-		text-weight: 300,
-		heavy-text-weight: 500
-	)
+
+/**
+ * Types
+ */
+$token-font-size-h1: 3.7rem;
+$token-font-size-body: 2.1rem;
+$token-font-size-sm: 1.9rem;
+$token-font-size-xs: 1.5rem;
+
+$token-font-line-height-map: (
+  phone-max: 1.4,
+  tablet-portrait-min: 1.4,
+  tablet-landscape-min: 1.5,
+  desktop-min: 1.5,
+  large-desktop-min: 1.6
 );
-
 
 
 /**
@@ -83,58 +71,61 @@ $fallbackVars: (
 $base-hue: 240;
 $base-saturation: 90%;
 
-[data-theme="dark"] {
-	@include defineColorHSL(--main, $base-hue, $base-saturation, 17%);
-	@include defineColorHSL(--text, $base-hue, $base-saturation, 95%);
-	@include defineColorHSL(--link, $base-hue, $base-saturation, 82%);
-	@include defineColorHSL(--footer, $base-hue, $base-saturation, 11%);
+:root {
+	--token-color-main: hsl(#{$base-hue}, #{$base-saturation}, 99%);
+	--token-color-text: hsl(#{$base-hue}, #{$base-saturation}, 26%);
+	--token-color-link: hsl(#{$base-hue}, #{$base-saturation}, 36%);
+	--token-color-link-border: hsla(#{$base-hue}, #{$base-saturation}, 36%, 30%);
+	--token-color-footer: hsl(#{$base-hue}, #{$base-saturation}, 96%);
+
+	--token-font-weight-normal: 400;
+	--token-font-weight-semibold: 600;
+	--token-font-weight-bold: 600;
 }
 
-[data-theme="light"] {
-	@include defineColorHSL(--main, $base-hue, $base-saturation, 99%);
-	@include defineColorHSL(--text, $base-hue, $base-saturation, 26%);
-	@include defineColorHSL(--link, $base-hue, $base-saturation, 36%);
-	@include defineColorHSL(--footer, $base-hue, $base-saturation, 96%);
+[data-theme="dark"] {
+	--token-color-main: hsl(#{$base-hue}, #{$base-saturation}, 17%);
+	--token-color-text: hsl(#{$base-hue}, #{$base-saturation}, 95%);
+	--token-color-link: hsl(#{$base-hue}, #{$base-saturation}, 82%);
+	--token-color-link-border: hsla(#{$base-hue}, #{$base-saturation}, 82%, 30%);
+	--token-color-footer: hsl(#{$base-hue}, #{$base-saturation}, 11%);
+
+	--token-font-weight-normal: 300;
+	--token-font-weight-semibold: 500;
+	--token-font-weight-bold: 600;
 }
+
+$token-color-fallbacks: (
+	token-color-main: #050752,
+	token-color-text: #E7E8FE,
+	token-color-link: #A8ABFA,
+	token-color-footer: #030535
+);
+
+$token-font-line-height: 1.5;
+$token-font-weight-normal: 300;
+$token-font-weight-semibold: 500;
+$token-font-weight-bold: 600;
 
 
 
 /**
  * Break points
  */
-$phone-max: pxToEm(599);
-$tablet-portrait-min: pxToEm(600);
-$tablet-landscape-min: pxToEm(900);
-$desktop-min: pxToEm(1200);
-$large-desktop-min: pxToEm(1800);
+$token-screen-phone-max: pxToEm(599);
+$token-screen-tablet-portrait-min: pxToEm(600);
+$token-screen-tablet-landscape-min: pxToEm(900);
+$token-screen-desktop-min: pxToEm(1200);
+$token-screen-large-desktop-min: pxToEm(1800);
 
 //Map to be used in "genMedias" mixin
-$break-list: (
-  phone-max: $phone-max,
-  tablet-portrait-min: $tablet-portrait-min,
-  tablet-landscape-min: $tablet-landscape-min,
-  desktop-min: $desktop-min,
-  large-desktop-min: $large-desktop-min
+$token-screen-map: (
+  phone-max: $token-screen-phone-max,
+  tablet-portrait-min: $token-screen-tablet-portrait-min,
+  tablet-landscape-min: $token-screen-tablet-landscape-min,
+  desktop-min: $token-screen-desktop-min,
+  large-desktop-min: $token-screen-large-desktop-min,
 );
 
 
-
-/**
- * Types
- */
-$h1-size: 3.7rem;
-$text-size: 2.1rem;
-$small-text-size: 1.5rem;
-$link-size: 1.9rem;
-
-:root, [data-theme="dark"] {
-	--h1-weight: 600;
-	--text-weight: 300;
-	--heavy-text-weight: 500;
-}
-
-[data-theme="light"] {
-	--h1-weight: 600;
-	--text-weight: 400;
-	--heavy-text-weight: 600;
-}
+$token-animation-normal: .5s ease-out;

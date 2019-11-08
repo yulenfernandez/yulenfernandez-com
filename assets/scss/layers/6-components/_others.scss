@@ -6,6 +6,7 @@
 .c-page-head {
 	display: flex;
 	align-items: center;
+	margin-bottom: $token-spacing-xs;
 
 	&__quit { margin-left: auto; }
 }
@@ -23,7 +24,8 @@
 		&:not(:first-child) { margin-left: 1rem; }
 
 		&.is-active {
-			@include customVarFallback(font-weight, types, heavy-text-weight);
+			font-weight: $token-font-weight-bold;
+			font-weight: var(--token-font-weight-bold);
 		}
 	}
 }
