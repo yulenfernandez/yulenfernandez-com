@@ -1,0 +1,14 @@
+/*----------------------------------------------------------------------------*\
+  2-TOOLS / 1 COLORS
+\*----------------------------------------------------------------------------*/
+
+
+@mixin themeColorVar($property, $varName, $writeTransition) {
+  #{$property}: map-get($token-color-fallbacks, $varName);
+  #{$property}: var(--#{$varName});
+
+  @if ($writeTransition) {
+    transition: background-color $token-animation-normal, color $token-animation-normal, border-color $token-animation-normal;
+    body.preload & { transition: none; }
+  }
+}

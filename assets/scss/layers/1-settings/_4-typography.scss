@@ -1,0 +1,50 @@
+/*----------------------------------------------------------------------------*\
+  1-SETTINGS / 4 TYPOGRAPHY 
+\*----------------------------------------------------------------------------*/
+
+
+//Map used in _resets.scss
+//We could use percentage, like "62.5%", but in IE11, this will calculate 9.93px and not 10px.
+//Source: https://raphaelgoetter.wordpress.com/2016/07/05/lastuce-du-font-size-62-5-oui-non-ou-ca-depend/
+$token-font-size-html-map: (
+  phone-max: calc(1em * .5625),
+  tablet-portrait-min: calc(1em * .5625),
+  tablet-landscape-min: calc(1em * .625),
+  desktop-min: calc(1em * .625),
+  large-desktop-min: calc(1em * .625),
+  xl-desktop-min: calc(1em * .6875)
+);
+
+$token-font-size-h1: 3.7rem;
+$token-font-size-body: 2.1rem;
+$token-font-size-sm: 1.9rem;
+$token-font-size-xs: 1.5rem;
+
+$token-font-line-height-map: (
+  phone-max: 1.4,
+  tablet-portrait-min: 1.4,
+  tablet-landscape-min: 1.5,
+  desktop-min: 1.5,
+  large-desktop-min: 1.6
+);
+
+:root {
+  --token-font-weight-normal: 400;
+  --token-font-weight-semibold: 600;
+  --token-font-weight-bold: 600;
+}
+
+[data-theme="dark"] {
+	--token-font-weight-normal: 300;
+	--token-font-weight-semibold: 500;
+	--token-font-weight-bold: 600;
+}
+
+$token-font-line-height: 1.5;
+$token-font-weight-normal: 300;
+$token-font-weight-semibold: 500;
+$token-font-weight-bold: 600;
+
+
+ //To adapt line-height on screen's size
+@include genMedias(":root", "--token-font-line-height", $token-font-line-height-map);

@@ -1,0 +1,21 @@
+/*----------------------------------------------------------------------------*\
+  1-SETTINGS / 3 RESPONSIVES 
+\*----------------------------------------------------------------------------*/
+
+
+$token-screen-phone-max: pxToEm(599);
+$token-screen-tablet-portrait-min: pxToEm(600);
+$token-screen-tablet-landscape-min: pxToEm(900);
+$token-screen-desktop-min: pxToEm(1200);
+$token-screen-large-desktop-min: pxToEm(1800);
+$token-screen-xl-desktop-min: pxToEm(2200);
+
+//Map to be used in "genMedias" mixin
+$token-screen-map: (
+  phone-max: $token-screen-phone-max,
+  tablet-portrait-min: $token-screen-tablet-portrait-min,
+  tablet-landscape-min: $token-screen-tablet-landscape-min,
+  desktop-min: $token-screen-desktop-min,
+  large-desktop-min: $token-screen-large-desktop-min,
+  xl-desktop-min: $token-screen-xl-desktop-min
+);

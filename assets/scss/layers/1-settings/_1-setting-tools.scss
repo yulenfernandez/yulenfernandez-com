@@ -1,0 +1,38 @@
+/*----------------------------------------------------------------------------*\
+  1-SETTINGS / 1 SETTING'S TOOLS
+\*----------------------------------------------------------------------------*/
+
+
+//Convert PX values to EM
+@function pxToEm($pxValue) {
+  @return ($pxValue/16) * 1em;
+}
+
+//Generate a CSS rule for all breaks points
+@mixin genMedias($tag, $property, $map) {
+
+  $first-loop: true;
+
+  @each $break-name,
+  $break-value in $token-screen-map {
+
+    @if ($first-loop) {
+      @media (max-width: #{$break-value}) {
+        #{$tag} {
+          #{$property}: map-get($map, $break-name);
+        }
+      }
+    }
+
+    @else {
+      @media (min-width: #{$break-value}) {
+        #{$tag} {
+          #{$property}: map-get($map, $break-name);
+        }
+      }
+    }
+
+    $first-loop: false;
+  }
+
+}

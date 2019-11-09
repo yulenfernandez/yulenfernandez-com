@@ -1,0 +1,15 @@
+/*----------------------------------------------------------------------------*\
+  1-SETTINGS / 5 SPACINGS
+\*----------------------------------------------------------------------------*/
+
+
+$token-spacing-base: .4rem;
+$token-spacing-3xs: $token-spacing-base * 1; //4px (+ 4px)
+$token-spacing-2xs: $token-spacing-base * 2; //8px (+ 4px)
+$token-spacing-xs: $token-spacing-base * 3; //12px (+ 4px)
+$token-spacing-sm: $token-spacing-base * 4; //16px (+ 8px)
+$token-spacing-md: $token-spacing-base * 6; //24px (+ 8px)
+$token-spacing-lg: $token-spacing-base * 8; //32px (+ 8px)
+$token-spacing-xl: $token-spacing-base * 12; //48px (+ 16px)
+$token-spacing-2xl: $token-spacing-base * 16; //64px (+ 16px)
+$token-spacing-3xl: $token-spacing-base * 24; //96px (+ 32px
