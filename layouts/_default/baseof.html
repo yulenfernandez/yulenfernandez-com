@@ -35,6 +35,9 @@
     
 		{{ $scriptColorTheme := resources.Get "js/detect-color-theme.js" | resources.Minify | resources.Fingerprint }}
     <script src="{{ $scriptColorTheme.Permalink }}"></script>
+
+    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/main.css") | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
     
     <script
       defer  
@@ -44,9 +47,6 @@
 
 		{{ $scriptMain := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
     <script defer src="{{ $scriptMain.Permalink }}"></script>
-
-		 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/main.css") | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
 
   </head>
   <body class="preload">
