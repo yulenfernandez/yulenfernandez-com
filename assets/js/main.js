@@ -1,5 +1,7 @@
 'use strict';
 
+let sCurrentPage = document.body.getAttribute('data-current-page');
+
 /**
  * Check if content overlap and so add class to modify display  
  */
@@ -137,7 +139,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 
 	// Only if we are on home page
-	if (location.pathname == '/') {
+	if (sCurrentPage == 'home') {
 
 		let dPageLinks = document.querySelectorAll('.js-pageLink');
 		for (let i = 0; i != dPageLinks.length; i++) {
@@ -174,7 +176,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('load', function() {
 	// Only if we are on home page
-	if (location.pathname == '/') {
+	if (sCurrentPage == 'home') {
 		rwdClassAdd('js-footerLeftSection', 'js-footerRightSection', 'horizontal', 15, 'js-footer', 'c-footer--mobile');
 	}
 });
