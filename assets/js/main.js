@@ -136,24 +136,21 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 
-
 	// Only if we are on home page
 	if (location.pathname == '/') {
 
-		rwdClassAdd('js-footerLeftSection', 'js-footerRightSection', 'horizontal', 15, 'js-footer', 'c-footer--mobile');
-		
 		let dPageLinks = document.querySelectorAll('.js-pageLink');
-		for (let i=0; i != dPageLinks.length; i++ ) {
-			dPageLinks[i].addEventListener('click', function() {
+		for (let i = 0; i != dPageLinks.length; i++) {
+			dPageLinks[i].addEventListener('click', function () {
 				fnPageHandler(this.getAttribute('targetPage'));
-			});	
+			});
 		}
-		
+
 		let dThemeSwitchs = document.querySelectorAll('.js-themeSwitch');
-		for (let i=0; i != dThemeSwitchs.length; i++ ) {
-			dThemeSwitchs[i].addEventListener('click', function() {
+		for (let i = 0; i != dThemeSwitchs.length; i++) {
+			dThemeSwitchs[i].addEventListener('click', function () {
 				fnThemeSwitch(this.getAttribute('themeValue'));
-			});	
+			});
 		}
 
 
@@ -173,5 +170,12 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 
 	document.body.classList.remove('preload');
+});
 
-}, false);
+window.addEventListener('load', function() {
+	// Only if we are on home page
+	if (location.pathname == '/') {
+		rwdClassAdd('js-footerLeftSection', 'js-footerRightSection', 'horizontal', 15, 'js-footer', 'c-footer--mobile');
+	}
+});
+
