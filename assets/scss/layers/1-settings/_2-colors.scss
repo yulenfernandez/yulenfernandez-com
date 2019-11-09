@@ -21,10 +21,3 @@ $base-saturation: 90%;
 	--token-color-link-border: hsla(#{$base-hue}, #{$base-saturation}, 82%, 30%);
 	--token-color-footer: hsl(#{$base-hue}, #{$base-saturation}, 11%);
 }
-
-$token-color-fallbacks: (
-	token-color-main: #050752,
-	token-color-text: #E7E8FE,
-	token-color-link: #A8ABFA,
-	token-color-footer: #030535
-);

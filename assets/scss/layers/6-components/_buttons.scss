@@ -7,18 +7,21 @@
 	display: inline-block;
 	padding: .8rem 2.4rem;
 	@include small-text-style;
-	font-weight: $token-font-weight-bold;
 	font-weight: var(--token-font-weight-bold);
-	@include themeColorVar("background", "token-color-text", false);
-	@include themeColorVar("color", "token-color-main", false);
+  background: var(--token-color-text);
+  @include themeTransition("background");
+  color: var(--token-color-main);
+  @include themeTransition("color");
 	border-radius: .4rem;
 	border: 0;
 
 	&.is-active {
-		@include themeColorVar("background", "token-color-text", false);
+		background: var(--token-color-text);
+		@include themeTransition("background");
 		&:hover {
 			cursor: pointer;
-			@include themeColorVar("background", "token-color-text", false);
+			background: var(--token-color-text);
+			@include themeTransition("background");
 		}
 	}
 

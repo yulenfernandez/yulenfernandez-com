@@ -10,10 +10,12 @@
 		background: none;
 		border: .15rem solid #000000;
 		@include small-text-style;
-		@include themeColorVar("border-color", "token-color-link", false);
+		border-color: var(--token-color-link);
+		@include themeTransition("border-color");
 		border-radius: .4rem;
 		&::placeholder {
-			@include themeColorVar("color", "token-color-link", true);
+			color: var(--token-color-link);
+			@include themeTransition("color");
 		}
 
 		[data-theme="dark"] & { border-width: .1rem; }

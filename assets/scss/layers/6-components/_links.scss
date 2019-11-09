@@ -6,7 +6,8 @@
 .c-link {
   padding-bottom: .8rem;
   border-bottom: .2rem solid #000000;
-	@include themeColorVar("border-color", "token-color-link-border", true);
+  border-color: var(--token-color-link-border);
+  @include themeTransition("border-color");
 	font-size: $token-font-size-sm;
 
   &--sm {
@@ -15,8 +16,10 @@
 	}
 
 	&:hover {
-		@include themeColorVar("color", "token-color-text", false);
-		@include themeColorVar("border-color", "token-color-link", false);
+		color: var(--token-color-text);
+		@include themeTransition("color");
+		border-color: var(--token-color-link);
+		@include themeTransition("border-color");
 	}
 
 }
@@ -25,7 +28,8 @@
 .c-quit {
 	width: 2rem;
 
-	@include themeColorVar("stroke", "token-color-text", true);
+  stroke: var(--token-color-text);
+  @include themeTransition("stroke");
 	stroke-width: 2.7rem;
 
 	[data-theme="dark"] & { stroke-width: 2.5rem; }

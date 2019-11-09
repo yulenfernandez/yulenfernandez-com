@@ -24,7 +24,6 @@
 		&:not(:first-child) { margin-left: 1rem; }
 
 		&.is-active {
-			font-weight: $token-font-weight-bold;
 			font-weight: var(--token-font-weight-bold);
 		}
 	}

@@ -1,0 +1,9 @@
+/*----------------------------------------------------------------------------*\
+  2-TOOLS / 0 OTHERS
+\*----------------------------------------------------------------------------*/
+
+
+@mixin themeTransition($property) {
+  transition: #{$property} $token-animation-normal;
+  body.preload & { transition: none; }
+}

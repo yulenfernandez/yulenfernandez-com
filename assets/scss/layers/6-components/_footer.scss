@@ -8,7 +8,8 @@
 	width: 100%;
 	@include section-padding;
 	@include small-text-style;
-	@include themeColorVar("background", "token-color-footer", true);
+  background: var(--token-color-footer);
+  @include themeTransition("background");
 	
 	&__wrapper { flex-direction: row; }
 
@@ -41,5 +42,4 @@
 				margin-top: 4.5rem;
 			}
 	}
-
 }

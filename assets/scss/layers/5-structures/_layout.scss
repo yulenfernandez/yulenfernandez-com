@@ -13,7 +13,8 @@
 		display: flex;
 		flex: 1;
 		@include section-padding;
-		@include themeColorVar("background", "token-color-main", true);
+		background: var(--token-color-main);
+		@include themeTransition("background");
 	}
 
 }

@@ -34,10 +34,10 @@ You can check the full code here: https://github.com/yulenfernandez/yulenfernand
 @import "layers/1-settings/7-radius";
 @import "layers/1-settings/8-animations";
 
-@import "layers/2-tools/1-colors";
-@import "layers/2-tools/2-responsives";
-@import "layers/2-tools/3-typography";
-@import "layers/2-tools/4-layouts";
+@import "layers/2-tools/0-others";
+@import "layers/2-tools/1-responsives";
+@import "layers/2-tools/2-typography";
+@import "layers/2-tools/3-layouts";
 
 @import "layers/3-generics/_resets.scss";
 

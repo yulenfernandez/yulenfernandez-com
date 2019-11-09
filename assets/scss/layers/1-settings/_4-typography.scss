@@ -4,15 +4,13 @@
 
 
 //Map used in _resets.scss
-//We could use percentage, like "62.5%", but in IE11, this will calculate 9.93px and not 10px.
-//Source: https://raphaelgoetter.wordpress.com/2016/07/05/lastuce-du-font-size-62-5-oui-non-ou-ca-depend/
 $token-font-size-html-map: (
-  phone-max: calc(1em * .5625),
-  tablet-portrait-min: calc(1em * .5625),
-  tablet-landscape-min: calc(1em * .625),
-  desktop-min: calc(1em * .625),
-  large-desktop-min: calc(1em * .625),
-  xl-desktop-min: calc(1em * .6875)
+  phone-max: .5625em, //9px
+  tablet-portrait-min: .5625em, //9px
+  tablet-landscape-min: .625em, //10px
+  desktop-min: .625em, //10px
+  large-desktop-min: .625em, //10px
+  xl-desktop-min: .6875em //11px
 );
 
 $token-font-size-h1: 3.7rem;
@@ -39,11 +37,6 @@ $token-font-line-height-map: (
 	--token-font-weight-semibold: 500;
 	--token-font-weight-bold: 600;
 }
-
-$token-font-line-height: 1.5;
-$token-font-weight-normal: 300;
-$token-font-weight-semibold: 500;
-$token-font-weight-bold: 600;
 
 
  //To adapt line-height on screen's size
