@@ -6,7 +6,7 @@
 .c-btn {
 	display: inline-block;
 	padding: .8rem 2.4rem;
-	@include small-text-style;
+	@include text-sm;
 	font-weight: var(--token-font-weight-bold);
   background: var(--token-color-text);
   @include themeTransition("background");

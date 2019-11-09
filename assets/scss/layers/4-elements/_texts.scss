@@ -6,18 +6,18 @@
 h1, p, a { margin: 0; }
 
 h1 { 
-  @include h1-style;
+  @include text-h1;
   margin-bottom: $token-spacing-2xs;
 }
 
 p {
-  @include p-style;
+  @include text-body;
   margin-bottom: $token-spacing-xl;
 }
 
 a {
 	display: inline-block;
-	@include a-style;
+	@include text-link;
 
 	&:hover { cursor: pointer; }
 }

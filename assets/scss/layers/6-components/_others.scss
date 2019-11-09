@@ -13,7 +13,7 @@
 
 
 .c-selector {
-	@include small-text-style;
+	@include text-sm;
 
 	// Hide the theme's switcher if browser doesn't support CSS custom variables.
 	&--theme-switch {

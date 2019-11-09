@@ -9,7 +9,7 @@
 		padding: 1.2rem;
 		background: none;
 		border: .15rem solid #000000;
-		@include small-text-style;
+		@include text-sm;
 		border-color: var(--token-color-link);
 		@include themeTransition("border-color");
 		border-radius: .4rem;
@@ -33,7 +33,7 @@
 	}
 	&__submit-msg {
 		margin-left: 2rem;
-		@include small-text-style;
+		@include text-sm;
 
 		@include for-phone-only {
 			margin-left: 0;
