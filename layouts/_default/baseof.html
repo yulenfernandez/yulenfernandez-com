@@ -42,9 +42,6 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
 
-		{{ $scriptMain := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
-    <script defer src="{{ $scriptMain.Permalink }}"></script>
-
 		 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/main.css") | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
 
@@ -57,6 +54,9 @@
     {{ block "main" . }}
   
     {{ end }}
+
+		{{ $scriptMain := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $scriptMain.Permalink }}"></script>
 
   </body>
 </html>
