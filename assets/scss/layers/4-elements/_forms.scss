@@ -9,7 +9,7 @@ form {
 	align-items: flex-start;
 }
 	input[name="username"] {
-		position: absolute;
+		position: fixed;
 		top: -1000px;
 	}
 	input[type="text"],
