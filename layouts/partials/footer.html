@@ -16,7 +16,7 @@
 			</div>
 			<div class="c-footer__link--wide  c-selector">
 				{{ range .AllTranslations }}
-					<a class='c-selector__item {{ cond (eq .Language $.Language) "is-active" "" }}' href="/{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+					<a class='c-selector__item {{ cond (eq .Language $.Language) "is-active" "" }}' href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
 				{{ end }}
 			</div>
 		</div>
