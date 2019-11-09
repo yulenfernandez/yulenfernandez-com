@@ -170,8 +170,6 @@ window.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	}
-
-	document.body.classList.remove('preload');
 });
 
 window.addEventListener('load', function() {
@@ -179,5 +177,7 @@ window.addEventListener('load', function() {
 	if (sCurrentPage == 'home') {
 		rwdClassAdd('js-footerLeftSection', 'js-footerRightSection', 'horizontal', 15, 'js-footer', 'c-footer--mobile');
 	}
+
+	document.body.classList.remove('preload');
 });
 
