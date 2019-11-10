@@ -144,7 +144,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		let dPageLinks = document.querySelectorAll('.js-pageLink');
 		for (let i = 0; i != dPageLinks.length; i++) {
 			dPageLinks[i].addEventListener('click', function () {
-				fnPageHandler(this.getAttribute('targetPage'));
+				fnPageHandler(this.getAttribute('data-target-page'));
 			});
 		}
 
