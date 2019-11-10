@@ -1,12 +1,3 @@
-- id: "Content"
-  translation: "Product Designer et développeur HTML/CSS passionné par les produits bien conçus. Travail actuellement chez ARGO à Montpellier, France."
-- id: "Design portfolio"
-  translation: "Portfolio design"
-- id: "Design shots"
-  translation: "Essais design"
-- id: "Code projects"
-  translation: "Projets code"
-
 - id: "Day"
   translation: "Jour"
 - id: "Night"

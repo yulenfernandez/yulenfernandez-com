@@ -1,11 +1,11 @@
 <div class="s-wrapper  js-page" page="home">
 	<h1>Yulen Fernandez</h1>
-	<p>{{ i18n "Content" }}</p>
+	<p>{{ .Params.s_content }}</p>
 
 	<div class="s-links-list">
-		<a class="s-links-list__element  c-link" href="https://behance.net/yulenfernandez" target="_blank" rel="noopener">{{ i18n "Design portfolio" }}</a>
-		<a class="s-links-list__element  c-link" href="https://dribbble.com/yulenfernandez" target="_blank" rel="noopener">{{ i18n "Design shots" }}</a>
-		<a class="s-links-list__element  c-link" href="https://github.com/yulenfernandez?tab=repositories" target="_blank" rel="noopener">{{ i18n "Code projects" }}</a>
+		{{ range .Params.o_links }}
+			<a class="s-links-list__element  c-link" href="{{ .s_href }}" target="_blank" rel="noopener">{{ .s_content }}</a>
+		{{ end }}
 		<a class="s-links-list__element  c-link  js-pageLink" targetPage="contact">Contact</a>
 		
 	</div>
