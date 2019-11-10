@@ -6,9 +6,9 @@
 		
 			<div class="s-wrapper  s-wrapper--center">
 				<img class="u-w-100  u-mw-500  u-mb-4" src="https://media.giphy.com/media/DzIIiyZvSdzxu/giphy.gif" alt=""> 
-				<h1>Page not found</h1>
-				<p>Looks like this page doesn't exist.</p>
-				<a href="/" class="c-link">Go to home</a>
+				<h1>{{ .Params.s_title }}</h1>
+				<p>{{ .Params.s_content }}</p>
+				<a href='{{ "/" | absLangURL }}' class="c-link">{{ .Params.s_buttoncontent }}</a>
 			</div>
 
 		</div>
