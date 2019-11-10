@@ -8,17 +8,17 @@
 	&__textarea {
 		padding: 1.2rem;
 		background: none;
-		border: .15rem solid #000000;
+		border: $token-border-width-md solid #000000;
 		@include text-sm;
 		border-color: var(--token-color-link);
 		@include themeTransition("border-color");
-		border-radius: .4rem;
+		border-radius: $token-border-radius-md;
 		&::placeholder {
 			color: var(--token-color-link);
 			@include themeTransition("color");
 		}
 
-		[data-theme="dark"] & { border-width: .1rem; }
+		[data-theme="dark"] & { border-width: $token-border-width-sm; }
 
 	}
 	&__submit-w {

@@ -12,7 +12,7 @@
   @include themeTransition("background");
   color: var(--token-color-main);
   @include themeTransition("color");
-	border-radius: .4rem;
+	border-radius: $token-border-radius-md;
 	border: 0;
 
 	&.is-active {
