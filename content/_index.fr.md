@@ -9,4 +9,8 @@ o_links:
     s_content: Essais design
   - s_href: https://github.com/yulenfernandez?tab=repositories
     s_content: Projets code
+o_form:
+  s_sending: Message en cours d'envoi...
+  s_success: Votre message a bien été envoyé.
+  s_fail: Désolé, votre message n'a pas pu être envoyé.
 ---

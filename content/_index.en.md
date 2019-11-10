@@ -9,4 +9,8 @@ o_links:
     s_content: Design shots
   - s_href: https://github.com/yulenfernandez?tab=repositories
     s_content: Code projects
+o_form:
+  s_sending: Sending your message...
+  s_success: Your message has been sent.
+  s_fail: Sorry, your message couldn't be sent.
 ---
