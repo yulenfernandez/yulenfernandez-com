@@ -4,14 +4,14 @@
 
 
 .c-link {
-  padding-bottom: .8rem;
+  padding-bottom: $token-spacing-2xs;
   border-bottom: $token-border-width-lg solid #000000;
   border-color: var(--token-color-link-border);
   @include themeTransition("border-color");
 	font-size: $token-font-size-sm;
 
   &--sm {
-		padding-bottom: .4rem; 
+		padding-bottom: $token-spacing-3xs;
 		font-size: $token-font-size-xs;
 	}
 
@@ -30,7 +30,7 @@
 
   stroke: var(--token-color-text);
   @include themeTransition("stroke");
-	stroke-width: 2.7rem;
+	stroke-width: 2.8rem;
 
-	[data-theme="dark"] & { stroke-width: 2.5rem; }
+	[data-theme="dark"] & { stroke-width: 2.4rem; }
 }

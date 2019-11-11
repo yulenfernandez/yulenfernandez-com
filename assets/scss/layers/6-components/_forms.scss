@@ -6,7 +6,7 @@
 .c-form {
 	&__input,
 	&__textarea {
-		padding: 1.2rem;
+		padding: $token-spacing-xs;
 		background: none;
 		border: $token-border-width-md solid #000000;
 		@include text-sm;
@@ -31,12 +31,12 @@
 		}
 	}
 	&__submit-msg {
-		margin-left: 2rem;
+		margin-left: $token-spacing-md;
 		@include text-sm;
 
 		@include for-phone-only {
 			margin-left: 0;
-			margin-top: 2rem;
+			margin-top: $token-spacing-md;
 		}
 	}
 }

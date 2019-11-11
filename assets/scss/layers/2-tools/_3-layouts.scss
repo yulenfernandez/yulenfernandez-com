@@ -4,6 +4,6 @@
 
 
 @mixin section-padding {
-	@include for-phone-only {	padding: 6rem 2.4rem; }
-	@include for-tablet-portrait-up { padding: 2.4rem; }
+	@include for-phone-only {	padding: $token-spacing-2xl $token-spacing-md; }
+	@include for-tablet-portrait-up { padding: $token-spacing-md; }
 }

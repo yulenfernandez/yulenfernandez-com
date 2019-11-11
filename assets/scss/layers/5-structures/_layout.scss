@@ -36,5 +36,5 @@
 	flex-direction: column;
 	align-items: flex-start;
 	
-	&__element:not(:last-child) { margin-bottom: 2.7rem; }
+	&__element:not(:last-child) { margin-bottom: $token-spacing-lg; }
 }

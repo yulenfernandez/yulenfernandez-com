@@ -16,7 +16,7 @@ form {
 	input[type="email"],
 	textarea {
 		width: 100%;
-		margin-bottom: 2.4rem;
+		margin-bottom: $token-spacing-md;
 
 		&:focus { outline: none; }
 	}

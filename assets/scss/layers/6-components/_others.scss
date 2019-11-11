@@ -21,7 +21,7 @@
 	}
 
 	&__item {
-		&:not(:first-child) { margin-left: 1rem; }
+		&:not(:first-child) { margin-left: $token-spacing-xs; }
 
 		&.is-active {
 			font-weight: var(--token-font-weight-bold);
