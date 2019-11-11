@@ -15,11 +15,6 @@
 .c-selector {
 	@include text-sm;
 
-	// Hide the theme's switcher if browser doesn't support CSS custom variables.
-	&--theme-switch {
-		@supports not (--css: variables) { display: none; }
-	}
-
 	&__item {
 		&:not(:first-child) { margin-left: $token-spacing-xs; }
 
