@@ -1,6 +1,7 @@
 baseURL: "https://yulenfernandez.com/"
 title: "Yulen Fernandez"
 DefaultContentLanguage: "en"
+enableRobotsTXT: true
 
 languages:
   en:
