@@ -16,7 +16,7 @@ form {
 	input[type="email"],
 	textarea {
 		width: 100%;
-		&:not(:first-child) { margin-top: 2.5rem; }
+		margin-top: 2.5rem;
 
 		&:focus { outline: none; }
 	}
