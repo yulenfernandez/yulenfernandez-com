@@ -18,10 +18,10 @@ form {
 		width: 100%;
 		margin-bottom: $token-spacing-md;
 
-		&:focus { outline: none; }
+		&:focus { outline: $token-border-width-sm solid var(--token-color-link); }
 	}
 	textarea {
-		height: 20rem;
+		height: 30rem;
 		resize: none;
 	}
 	input[type="submit"] { 
