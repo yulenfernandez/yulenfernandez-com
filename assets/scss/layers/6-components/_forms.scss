@@ -8,9 +8,8 @@
 	&__textarea {
 		padding: $token-spacing-xs;
 		background: none;
-		border: $token-border-width-md solid #000000;
+		border: $token-border-width-md solid var(--token-color-link);
 		@include text-sm;
-		border-color: var(--token-color-link);
 		@include themeTransition("border-color");
 		border-radius: $token-border-radius-md;
 		&::placeholder {
