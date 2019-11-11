@@ -8,11 +8,11 @@
   border-bottom: $token-border-width-lg solid #000000;
   border-color: var(--token-color-link-border);
   @include themeTransition("border-color");
-	font-size: $token-font-size-sm;
+	font-size: $token-font-size-body;
 
   &--sm {
 		padding-bottom: $token-spacing-3xs;
-		font-size: $token-font-size-xs;
+		font-size: $token-font-size-sm;
 	}
 
 	&:hover {

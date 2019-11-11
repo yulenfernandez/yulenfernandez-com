@@ -25,7 +25,7 @@
 
 @mixin text-sm {
   @include text-base;
-  font-size: $token-font-size-xs;
+  font-size: $token-font-size-sm;
 }
 
 @mixin text-link {
