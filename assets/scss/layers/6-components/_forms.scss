@@ -24,7 +24,6 @@
 	&__submit-w {
 		display: flex;
 		align-items: center;
-		margin-top: 3.7rem;
 
 		@include for-phone-only {
 			align-items: flex-start;
