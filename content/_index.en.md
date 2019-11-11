@@ -1,5 +1,7 @@
 ---
 linkTitle: home
+s_headtitle: Yulen Fernandez - Design and Code
+s_metadescription: "Product Designer and HTML/CSS developer passionate about great products. Currently working at ARGO in Montpellier, France."
 
 s_content: Product Designer and HTML/CSS developer passionate about great products. Currently working at ARGO in Montpellier, France.
 o_links:
