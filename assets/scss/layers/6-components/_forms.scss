@@ -9,7 +9,7 @@
 		padding: $token-spacing-xs;
 		background: none;
 		border: $token-border-width-md solid var(--token-color-link);
-		@include text-sm;
+		@include text-body;
 		@include themeTransition("border-color");
 		border-radius: $token-border-radius-md;
 		&::placeholder {
