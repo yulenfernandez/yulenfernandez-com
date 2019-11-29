@@ -7,7 +7,7 @@
 	display: flex;
 	width: 100%;
 	@include section-padding;
-	@include text-sm;
+	@include text-xs;
   background: var(--token-color-footer);
   @include themeTransition("background");
 	

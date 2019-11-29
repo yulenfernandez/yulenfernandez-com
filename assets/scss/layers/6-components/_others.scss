@@ -13,7 +13,7 @@
 
 
 .c-selector {
-	@include text-sm;
+	@include text-xs;
 
 	&__item {
 		&:not(:first-child) { margin-left: $token-spacing-xs; }

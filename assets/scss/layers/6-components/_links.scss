@@ -10,9 +10,9 @@
   @include themeTransition("border-color");
 	font-size: $token-font-size-body;
 
-  &--sm {
+  &--xs {
 		padding-bottom: $token-spacing-3xs;
-		font-size: $token-font-size-sm;
+		font-size: $token-font-size-xs;
 	}
 
 	&:hover {

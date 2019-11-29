@@ -28,6 +28,11 @@
   font-size: $token-font-size-sm;
 }
 
+@mixin text-xs {
+  @include text-base;
+  font-size: $token-font-size-xs;
+}
+
 @mixin text-link {
   @include text-base;
 	line-height: 1;
