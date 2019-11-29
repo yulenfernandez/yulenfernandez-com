@@ -8,3 +8,5 @@ languages:
     languageName: En
   fr:
     languageName: Fr
+  es:
+    languageName: Es

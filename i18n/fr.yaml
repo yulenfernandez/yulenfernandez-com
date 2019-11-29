@@ -1,3 +1,6 @@
+- id: "Contact"
+  translation: "Contact"
+
 - id: "Day"
   translation: "Jour"
 - id: "Night"

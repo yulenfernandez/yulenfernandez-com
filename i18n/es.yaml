@@ -1,0 +1,14 @@
+- id: "Contact"
+  translation: "Contacto"
+
+- id: "Day"
+  translation: "Día"
+- id: "Night"
+  translation: "Noche"
+
+- id: "Your email"
+  translation: "Vuestro email"
+- id: "Your message"
+  translation: "Vuestro mensaje"
+- id: "Send"
+  translation: "Enviar"
