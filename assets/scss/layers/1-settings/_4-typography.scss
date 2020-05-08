@@ -28,13 +28,13 @@ $token-font-line-height-map: (
 
 :root {
   --token-font-weight-normal: 400;
-  --token-font-weight-semibold: 600;
+  // --token-font-weight-semibold: 600;
   --token-font-weight-bold: 600;
 }
 
 [data-theme="dark"] {
 	--token-font-weight-normal: 300;
-	--token-font-weight-semibold: 500;
+	// --token-font-weight-semibold: 500;
 	--token-font-weight-bold: 600;
 }
 

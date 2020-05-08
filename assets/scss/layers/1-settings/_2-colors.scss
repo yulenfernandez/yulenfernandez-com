@@ -4,20 +4,20 @@
 
 
 $base-hue: 240;
-$base-saturation: 90%;
+$base-saturation: 5%;
 
 :root {
 	--token-color-main: hsl(#{$base-hue}, #{$base-saturation}, 99%);
 	--token-color-text: hsl(#{$base-hue}, #{$base-saturation}, 26%);
 	--token-color-link: hsl(#{$base-hue}, #{$base-saturation}, 36%);
 	--token-color-link-border: hsla(#{$base-hue}, #{$base-saturation}, 36%, 30%);
-	--token-color-footer: hsl(#{$base-hue}, #{$base-saturation}, 96%);
+	--token-color-footer: hsl(#{$base-hue}, #{$base-saturation}, 94%);
 }
 
 [data-theme="dark"] {
-	--token-color-main: hsl(#{$base-hue}, #{$base-saturation}, 17%);
+	--token-color-main: hsl(#{$base-hue}, #{$base-saturation}, 15%);
 	--token-color-text: hsl(#{$base-hue}, #{$base-saturation}, 95%);
 	--token-color-link: hsl(#{$base-hue}, #{$base-saturation}, 82%);
 	--token-color-link-border: hsla(#{$base-hue}, #{$base-saturation}, 82%, 30%);
-	--token-color-footer: hsl(#{$base-hue}, #{$base-saturation}, 11%);
+	--token-color-footer: hsl(#{$base-hue}, #{$base-saturation}, 10%);
 }
