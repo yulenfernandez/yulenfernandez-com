@@ -5,11 +5,11 @@ s_metadescription: "Product Designer and HTML/CSS developer passionate about gre
 
 s_content: Product Designer and HTML/CSS developer passionate about great products. Currently working at ARGO in Montpellier, France.
 o_links:
-  - s_href: https://behance.net/yulenfernandez
+  - s_href: https://behance.net/dokozero
     s_content: Design portfolio
-  - s_href: https://dribbble.com/yulenfernandez
+  - s_href: https://dribbble.com/dokozero
     s_content: Design shots
-  - s_href: https://github.com/yulenfernandez?tab=repositories
+  - s_href: https://github.com/dokozero?tab=repositories
     s_content: Code projects
 o_form:
   s_sending: Sending your message...
