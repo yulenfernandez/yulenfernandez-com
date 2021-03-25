@@ -1,9 +1,9 @@
 ---
 linkTitle: home
 s_headtitle: Doko Zero - Design and Code
-s_metadescription: "Product Designer and HTML/CSS developer passionate about great products. Currently working at ARGO in Montpellier, France."
+s_metadescription: "Product Designer and HTML/CSS developer passionate about great products."
 
-s_content: Product Designer and HTML/CSS developer passionate about great products. Currently working at ARGO in Montpellier, France.
+s_content: Product Designer and HTML/CSS developer passionate about great products.
 o_links:
   - s_href: https://behance.net/dokozero
     s_content: Design portfolio
