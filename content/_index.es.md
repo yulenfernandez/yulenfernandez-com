@@ -1,6 +1,6 @@
 ---
 linkTitle: home
-s_headtitle: Yulen Fernandez - Diseño y Código
+s_headtitle: Doko Zero - Diseño y Código
 s_metadescription: "Product designer y desarrollador HTML/CSS apasionado por los productos bien diseñados. Actualmente trabajando en ARGO en Montpellier, Francia"
 
 s_content: Product designer y desarrollador HTML/CSS apasionado por los productos bien diseñados. Actualmente trabajando en ARGO en Montpellier, Francia
